@@ -22,7 +22,10 @@
   <main class="guide-page">
     <div class="guide-header">
       <h1>NotebookLM &mdash; Vue principale</h1>
-      <p>Cliquez sur les pastilles orange pour découvrir chaque fonctionnalité</p>
+      <div class="guide-intro">
+        <p><strong>NotebookLM</strong> est l'outil idéal quand vous avez <strong>vos propres documents</strong> à analyser. Contrairement à Gemini qui puise dans ses connaissances générales, NotebookLM travaille <strong>exclusivement à partir de vos sources</strong> : vos PDF, vos sites web, vos fichiers audio ou vidéo. C'est votre assistant de recherche personnel, qui ne va jamais inventer d'informations. Utilisez-le pour explorer un corpus de documents, croiser des sources, produire des synthèses ou créer des supports pédagogiques à partir de vos propres contenus.</p>
+      </div>
+      <p class="guide-subtitle">Cliquez sur les pastilles orange pour découvrir chaque fonctionnalité</p>
     </div>
 
     <div class="screenshot-container" id="screenshotContainer">
@@ -36,8 +39,8 @@
       <!-- Zone highlights (shown on hotspot hover) -->
       <div class="zone-highlight" id="zone-2" style="left: 0%; top: 17%; width: 26.5%; height: 83%;"></div>
       <div class="zone-highlight" id="zone-3" style="left: 26.5%; top: 7.5%; width: 47.5%; height: 92.5%;"></div>
-      <div class="zone-highlight" id="zone-4" style="left: 74%; top: 10%; width: 26%; height: 47%;"></div>
-      <div class="zone-highlight" id="zone-5" style="left: 74%; top: 57%; width: 26%; height: 43%;"></div>
+      <div class="zone-highlight" id="zone-4" style="left: 74%; top: 10%; width: 26%; height: 34%;"></div>
+      <div class="zone-highlight" id="zone-5" style="left: 74%; top: 45%; width: 26%; height: 55%;"></div>
 
       <!-- Hotspot 1 : Ajouter des sources -->
       <button
@@ -121,10 +124,19 @@
       Cliquez sur une pastille pour en savoir plus
     </div>
 
-    <div class="page-navigation">
-      <span class="page-nav-info">Page 1/2 &mdash; Vue principale</span>
-      <a href="notebooklm-page2.html" class="page-nav-btn next">Fonctionnalités avancées &rarr;</a>
-    </div>
+    <a href="notebooklm-page2.html" class="next-page-banner">
+      <div class="next-page-content">
+        <span class="next-page-label">Page suivante</span>
+        <span class="next-page-title">Fonctionnalités avancées</span>
+        <span class="next-page-desc">Découvrez les outils complémentaires de NotebookLM</span>
+      </div>
+      <div class="next-page-arrow">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"></path>
+          <path d="M12 5l7 7-7 7"></path>
+        </svg>
+      </div>
+    </a>
   </main>
 
   <!-- Modal -->
