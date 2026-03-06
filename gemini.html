@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemini - Guide interactif</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">Guide Gemini & NotebookLM</a>
+    <div class="nav-links">
+      <a href="notebooklm.html">NotebookLM</a>
+      <a href="gemini.html" class="active">Gemini</a>
+    </div>
+  </nav>
+
+  <main class="guide-page">
+    <div class="guide-header">
+      <h1>Gemini &mdash; Vue principale</h1>
+      <div class="guide-intro">
+        <p><strong>Gemini</strong> est l'assistant IA de Google, accessible directement depuis votre navigateur. Contrairement à NotebookLM qui travaille exclusivement à partir de vos documents, Gemini s'appuie sur ses <strong>connaissances générales</strong> pour vous aider à <strong>rédiger</strong>, <strong>analyser</strong>, <strong>rechercher</strong> et <strong>créer du contenu</strong>. Vous pouvez aussi lui fournir des fichiers ponctuellement pour qu'il les analyse. C'est votre assistant polyvalent au quotidien.</p>
+      </div>
+      <p class="guide-subtitle">Cliquez sur les pastilles orange pour découvrir chaque fonctionnalité</p>
+    </div>
+
+    <div class="screenshot-container" id="screenshotContainer">
+      <img
+        src="images/gemini-main.png"
+        alt="Interface principale de Gemini"
+        class="screenshot-img"
+        id="screenshotImg"
+      >
+
+      <!-- Les zone highlights et hotspots seront ajoutés après réception de la capture d'écran -->
+
+    </div>
+
+    <div class="legend">
+      <span class="legend-dot"></span>
+      Cliquez sur une pastille pour en savoir plus
+    </div>
+
+    <a href="gemini-page2.html" class="next-page-banner">
+      <div class="next-page-content">
+        <span class="next-page-label">Page suivante</span>
+        <span class="next-page-title">L'art du prompt</span>
+        <span class="next-page-desc">Apprenez à formuler vos demandes pour obtenir les meilleures réponses</span>
+      </div>
+      <div class="next-page-arrow">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"></path>
+          <path d="M12 5l7 7-7 7"></path>
+        </svg>
+      </div>
+    </a>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <div class="modal-inner">
+        <button class="modal-close" id="modalClose" aria-label="Fermer">&times;</button>
+        <div class="modal-header">
+          <span class="modal-badge" id="modalBadge">1</span>
+          <h2 class="modal-title" id="modalTitle"></h2>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+      </div>
+      <div class="modal-footer" id="modalFooter"></div>
+    </div>
+  </div>
+
+  <!-- Contenu des annotations (sera complété après réception de la capture d'écran) -->
+  <script>
+    const pageContent = {
+      1: {
+        title: "Barre de prompt",
+        body: `
+          <p>La <strong>barre de saisie</strong> en bas de l'écran est votre point d'entrée pour interagir avec Gemini. C'est ici que vous tapez vos questions, demandes ou instructions.</p>
+
+          <h3>Ce que vous pouvez faire</h3>
+          <ul>
+            <li><strong>Poser une question</strong> : « Quelles sont les obligations d'une commune en matière d'accessibilité ? »</li>
+            <li><strong>Demander une rédaction</strong> : « Rédige un courrier aux habitants pour annoncer des travaux de voirie »</li>
+            <li><strong>Joindre un fichier</strong> : le bouton d'import permet d'ajouter un PDF, une image ou un tableur à analyser</li>
+            <li><strong>Dicter vocalement</strong> : le micro permet de parler au lieu de taper</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>Astuce :</strong> plus votre demande est précise et contextualisée, meilleure sera la réponse. Donnez un contexte, un objectif et un format attendu (voir page suivante « L'art du prompt »).
+          </div>
+        `,
+        footer: ''
+      },
+      2: {
+        title: "Sélecteur de modèle",
+        body: `
+          <p>En haut de la barre de saisie, vous pouvez choisir le <strong>modèle d'IA</strong> qui va traiter votre demande.</p>
+
+          <h3>Les modèles disponibles</h3>
+          <ul>
+            <li><strong>2.5 Flash</strong> : rapide et efficace pour les tâches courantes (questions simples, résumés, traductions)</li>
+            <li><strong>2.5 Pro</strong> : plus puissant pour les tâches complexes (analyse approfondie, rédaction longue, raisonnement)</li>
+            <li><strong>Deep Research</strong> : mode de recherche approfondie qui explore le web et produit un rapport détaillé</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>Conseil :</strong> pour la plupart des usages quotidiens, <strong>2.5 Flash</strong> suffit largement. Réservez <strong>2.5 Pro</strong> pour les demandes complexes et <strong>Deep Research</strong> pour les recherches approfondies.
+          </div>
+        `,
+        footer: ''
+      },
+      3: {
+        title: "Zone de conversation",
+        body: `
+          <p>La zone centrale affiche votre <strong>échange avec Gemini</strong> : vos questions et les réponses de l'IA s'enchaînent de façon conversationnelle.</p>
+
+          <h3>Ce que vous pouvez faire</h3>
+          <ul>
+            <li><strong>Lire la réponse structurée</strong> : Gemini organise ses réponses avec des titres, des listes et du texte en gras</li>
+            <li><strong>Enchaîner les questions</strong> : posez des questions de suivi, Gemini garde le contexte de la conversation</li>
+            <li><strong>Copier la réponse</strong> : un bouton permet de copier le texte pour le réutiliser</li>
+          </ul>
+
+          <h3>Différence avec NotebookLM</h3>
+          <p>Ici, Gemini répond à partir de ses <strong>connaissances générales</strong>, pas uniquement à partir de vos documents. Il peut donc répondre à des questions très larges, mais sans la traçabilité des sources qu'offre NotebookLM.</p>
+        `,
+        footer: ''
+      },
+      4: {
+        title: "Historique des conversations",
+        body: `
+          <p>Le <strong>panneau latéral gauche</strong> affiche l'historique de toutes vos conversations passées avec Gemini.</p>
+
+          <h3>Ce que vous pouvez faire</h3>
+          <ul>
+            <li><strong>Retrouver une conversation</strong> : chaque conversation est listée avec son titre (généré automatiquement à partir de votre première question)</li>
+            <li><strong>Reprendre un échange</strong> : cliquez sur une conversation pour la rouvrir et continuer là où vous en étiez</li>
+            <li><strong>Nouvelle conversation</strong> : le bouton en haut vous permet de démarrer un échange vierge à tout moment</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>Bon à savoir :</strong> chaque nouvelle conversation repart de zéro. Si vous changez de sujet, il est préférable de créer une nouvelle conversation plutôt que de mélanger les thèmes.
+          </div>
+        `,
+        footer: ''
+      },
+      5: {
+        title: "Accès aux Gems",
+        body: `
+          <p>Les <strong>Gems</strong> sont des <strong>assistants personnalisés</strong> que vous pouvez créer ou utiliser dans Gemini. Ils sont accessibles depuis le panneau latéral.</p>
+
+          <h3>Qu'est-ce qu'un Gem ?</h3>
+          <ul>
+            <li>Un Gem est une <strong>version spécialisée</strong> de Gemini, configurée avec des instructions précises</li>
+            <li>Par exemple : un Gem « Conseiller juridique collectivités » qui répond toujours sous l'angle du droit public</li>
+            <li>Vous pouvez utiliser les <strong>Gems prêts à l'emploi</strong> ou <strong>créer les vôtres</strong></li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>Astuce :</strong> les Gems sont particulièrement utiles si vous posez régulièrement le même type de questions. Au lieu de reformuler le contexte à chaque fois, le Gem le fait pour vous automatiquement. Nous y reviendrons en détail page 4.
+          </div>
+        `,
+        footer: ''
+      },
+      6: {
+        title: "Actions sur la réponse",
+        body: `
+          <p>Sous chaque réponse de Gemini, plusieurs <strong>boutons d'action</strong> vous permettent de manipuler le contenu généré.</p>
+
+          <h3>Les actions disponibles</h3>
+          <ul>
+            <li><strong>Copier</strong> : copie la réponse dans le presse-papiers pour la coller ailleurs</li>
+            <li><strong>Évaluer</strong> : pouce haut / pouce bas pour indiquer si la réponse vous convient</li>
+            <li><strong>Partager et exporter</strong> : partagez la conversation ou exportez-la vers Google Docs</li>
+            <li><strong>Modifier la réponse</strong> : demandez une version plus courte, plus longue, plus simple ou plus professionnelle</li>
+            <li><strong>Vérifier avec Google</strong> : Gemini peut recouper sa réponse avec des résultats de recherche Google pour vérifier les faits</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>Bon à savoir :</strong> le bouton « Vérifier » est particulièrement utile. Il surligne en vert les passages confirmés par des sources web et en orange ceux qui n'ont pas pu être vérifiés.
+          </div>
+        `,
+        footer: ''
+      }
+    };
+  </script>
+  <script src="script.js"></script>
+
+</body>
+</html>
