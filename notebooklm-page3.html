@@ -23,7 +23,7 @@
     <div class="guide-header">
       <h1>NotebookLM &mdash; Contenu d'une source</h1>
       <div class="guide-intro">
-        <p>Quand vous cliquez sur une source dans le panneau de gauche, NotebookLM affiche son <strong>contenu tel qu'il a été lu et compris par l'IA</strong>. Pour les documents texte, vous retrouvez le contenu intégral. Pour les <strong>fichiers audio et vidéo</strong>, NotebookLM réalise automatiquement une <strong>retranscription complète</strong>, que vous pouvez lire et exploiter comme n'importe quel document texte.</p>
+        <p>Quand vous cliquez sur une source dans le panneau de gauche, NotebookLM affiche son <strong>contenu tel qu'il a été lu et compris par l'IA</strong>. Pour les documents texte, vous retrouvez le contenu intégral. Pour les <strong>vidéos YouTube</strong>, NotebookLM récupère les sous-titres existants. Pour les <strong>fichiers audio</strong> (MP3, WAV...), il réalise <strong>sa propre transcription</strong>. Dans tous les cas, le contenu est exploitable comme n'importe quel document texte.</p>
       </div>
       <p class="guide-subtitle">Cliquez sur les pastilles orange pour découvrir chaque fonctionnalité</p>
     </div>
@@ -154,10 +154,10 @@
           </ul>
 
           <h3>Comment ça marche ?</h3>
-          <p>NotebookLM utilise les <strong>sous-titres de la vidéo</strong> (générés automatiquement par YouTube ou ajoutés manuellement) pour créer une retranscription textuelle. C'est ce texte qui est ensuite analysé par l'IA pour répondre à vos questions.</p>
+          <p>NotebookLM <strong>récupère les sous-titres existants</strong> de la vidéo YouTube (qu'ils soient générés automatiquement par YouTube ou ajoutés manuellement par l'auteur). C'est ce texte qui est ensuite analysé par l'IA pour répondre à vos questions.</p>
 
           <div class="highlight-box">
-            <strong>Astuce :</strong> cette fonctionnalité fonctionne aussi avec les <strong>fichiers audio</strong> (MP3, WAV...). Importez un enregistrement et NotebookLM le retranscrira automatiquement.
+            <strong>Important :</strong> une vidéo YouTube <strong>sans sous-titres ne peut pas être importée</strong> dans NotebookLM. La plupart des vidéos YouTube disposent de sous-titres automatiques, mais vérifiez leur présence avant l'import.
           </div>
         `,
         footer: ''
@@ -165,18 +165,23 @@
       3: {
         title: "Transcription automatique",
         body: `
-          <p>Sous la vidéo (ou à la place du lecteur pour un fichier audio), NotebookLM affiche la <strong>retranscription complète et automatique</strong> du contenu audio ou vidéo.</p>
+          <p>Sous la vidéo, NotebookLM affiche le <strong>texte intégral des sous-titres</strong> récupérés depuis YouTube. C'est ce texte que l'IA utilise pour analyser le contenu et répondre à vos questions.</p>
 
-          <h3>Qualité de la transcription</h3>
+          <h3>Vidéos YouTube vs fichiers audio</h3>
           <ul>
-            <li>La transcription est <strong>globalement fidèle et exploitable</strong> : les phrases sont correctement retranscrites</li>
-            <li>Elle peut être utilisée pour <strong>transcrire des réunions</strong>, des entretiens, des conférences ou tout autre enregistrement audio/vidéo</li>
-            <li>L'IA analyse ensuite ce texte comme n'importe quel document pour répondre à vos questions</li>
+            <li><strong>Vidéos YouTube :</strong> NotebookLM <strong>récupère les sous-titres</strong> existants (automatiques ou manuels) — il ne retranscrit pas lui-même la vidéo</li>
+            <li><strong>Fichiers audio</strong> (MP3, WAV...) : NotebookLM <strong>réalise sa propre transcription</strong>, ce qui en fait un outil très pratique pour transcrire des réunions, des entretiens ou des conférences</li>
+          </ul>
+
+          <h3>Qualité et exploitation</h3>
+          <ul>
+            <li>Dans les deux cas, la transcription est <strong>globalement fidèle et exploitable</strong></li>
+            <li>L'IA analyse ce texte comme n'importe quel document pour répondre à vos questions</li>
           </ul>
 
           <h3>Limites à connaître</h3>
           <ul>
-            <li><strong>Pas de time code :</strong> la transcription ne comporte pas d'horodatage (pas de repère temporel pour retrouver un passage dans la vidéo)</li>
+            <li><strong>Pas de time code :</strong> la transcription ne comporte pas d'horodatage (pas de repère temporel pour retrouver un passage dans l'enregistrement)</li>
             <li><strong>Pas de diarisation :</strong> les différents interlocuteurs ne sont pas identifiés — le texte est retranscrit en continu, sans distinguer qui parle</li>
           </ul>
 
