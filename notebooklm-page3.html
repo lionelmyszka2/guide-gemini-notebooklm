@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NotebookLM - Contenu d'une source</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">Guide Gemini & NotebookLM</a>
+    <div class="nav-links">
+      <a href="notebooklm.html" class="active">NotebookLM</a>
+      <a href="#" class="disabled">Gemini</a>
+    </div>
+  </nav>
+
+  <main class="guide-page">
+    <div class="guide-header">
+      <h1>NotebookLM &mdash; Contenu d'une source</h1>
+      <div class="guide-intro">
+        <p>Quand vous cliquez sur une source dans le panneau de gauche, NotebookLM affiche son <strong>contenu tel qu'il a été lu et compris par l'IA</strong>. Pour les documents texte, vous retrouvez le contenu intégral. Pour les <strong>fichiers audio et vidéo</strong>, NotebookLM réalise automatiquement une <strong>retranscription complète</strong>, que vous pouvez lire et exploiter comme n'importe quel document texte.</p>
+      </div>
+      <p class="guide-subtitle">Cliquez sur les pastilles orange pour découvrir chaque fonctionnalité</p>
+    </div>
+
+    <div class="screenshot-container" id="screenshotContainer">
+      <img
+        src="images/notebooklm-page3.png"
+        alt="NotebookLM - Contenu d'une source avec transcription vidéo"
+        class="screenshot-img"
+        id="screenshotImg"
+      >
+
+      <!-- Zone highlights -->
+      <div class="zone-highlight" id="zone-1" style="left: 0%; top: 9%; width: 39%; height: 25%;"></div>
+      <div class="zone-highlight" id="zone-2" style="left: 0%; top: 38%; width: 39%; height: 32%;"></div>
+      <div class="zone-highlight" id="zone-3" style="left: 0%; top: 70%; width: 39%; height: 30%;"></div>
+
+      <!-- Hotspot 1 : Guide sur la source -->
+      <button
+        class="hotspot"
+        data-hotspot="1"
+        data-tooltip="Guide sur la source"
+        data-zone="zone-1"
+        style="left: 12%; top: 13%;"
+        aria-label="Annotation 1 : Guide sur la source"
+      >
+        <span class="hotspot-number">1</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 2 : Vidéo intégrée -->
+      <button
+        class="hotspot"
+        data-hotspot="2"
+        data-tooltip="Vidéo intégrée"
+        data-zone="zone-2"
+        style="left: 18%; top: 53%;"
+        aria-label="Annotation 2 : Vidéo intégrée"
+      >
+        <span class="hotspot-number">2</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 3 : Transcription automatique -->
+      <button
+        class="hotspot"
+        data-hotspot="3"
+        data-tooltip="Transcription automatique"
+        data-zone="zone-3"
+        style="left: 15%; top: 80%;"
+        aria-label="Annotation 3 : Transcription automatique"
+      >
+        <span class="hotspot-number">3</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+    </div>
+
+    <div class="legend">
+      <span class="legend-dot"></span>
+      Cliquez sur une pastille pour en savoir plus
+    </div>
+
+    <!-- Navigation : ← Page 2 -->
+    <a href="notebooklm-page2.html" class="nav-banner nav-banner-prev" style="margin-top: 2rem;">
+      <div class="nav-banner-arrow">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5"></path>
+          <path d="M12 19l-7-7 7-7"></path>
+        </svg>
+      </div>
+      <div class="nav-banner-content">
+        <span class="nav-banner-label">Page précédente</span>
+        <span class="nav-banner-title">Vérification des sources</span>
+      </div>
+    </a>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <div class="modal-inner">
+        <button class="modal-close" id="modalClose" aria-label="Fermer">&times;</button>
+        <div class="modal-header">
+          <span class="modal-badge" id="modalBadge">1</span>
+          <h2 class="modal-title" id="modalTitle"></h2>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+      </div>
+      <div class="modal-footer" id="modalFooter"></div>
+    </div>
+  </div>
+
+  <!-- Contenu des annotations -->
+  <script>
+    const pageContent = {
+      1: {
+        title: "Guide sur la source",
+        body: `
+          <p>Quand vous ouvrez une source, NotebookLM affiche en haut un <strong>« Guide sur la source »</strong>. C'est un <strong>résumé automatique</strong> généré par l'IA à partir du contenu du document.</p>
+
+          <h3>Ce que contient le guide</h3>
+          <ul>
+            <li>Une <strong>synthèse</strong> des thèmes principaux du document, avec les concepts clés en gras</li>
+            <li>Des <strong>mots-clés thématiques</strong> (étiquettes cliquables) qui identifient les sujets abordés dans la source</li>
+            <li>Ces mots-clés vous permettent de <strong>lancer rapidement une question</strong> sur un thème spécifique</li>
+          </ul>
+
+          <h3>Pourquoi c'est utile ?</h3>
+          <p>Le guide vous donne un <strong>aperçu instantané</strong> du contenu d'une source sans avoir à la lire en entier. C'est particulièrement pratique quand vous avez importé de nombreux documents et que vous voulez savoir rapidement ce que contient chacun d'eux.</p>
+
+          <div class="highlight-box">
+            <strong>Bon à savoir :</strong> le guide est généré automatiquement pour chaque source, qu'il s'agisse d'un PDF, d'un site web, d'une vidéo ou d'un fichier audio. C'est la « carte d'identité » de votre document.
+          </div>
+        `,
+        footer: ''
+      },
+      2: {
+        title: "Vidéo intégrée",
+        body: `
+          <p>Quand vous importez une <strong>vidéo YouTube</strong> comme source, NotebookLM intègre directement le <strong>lecteur vidéo</strong> dans le panneau de la source.</p>
+
+          <h3>Ce que vous pouvez faire</h3>
+          <ul>
+            <li><strong>Cliquer sur la vignette</strong> pour démarrer la lecture de la vidéo directement dans NotebookLM</li>
+            <li>Regarder la vidéo <strong>sans quitter l'interface</strong>, tout en continuant à discuter avec l'IA</li>
+            <li>Mettre en pause, avancer ou reculer comme dans n'importe quel lecteur vidéo</li>
+          </ul>
+
+          <h3>Comment ça marche ?</h3>
+          <p>NotebookLM utilise les <strong>sous-titres de la vidéo</strong> (générés automatiquement par YouTube ou ajoutés manuellement) pour créer une retranscription textuelle. C'est ce texte qui est ensuite analysé par l'IA pour répondre à vos questions.</p>
+
+          <div class="highlight-box">
+            <strong>Astuce :</strong> cette fonctionnalité fonctionne aussi avec les <strong>fichiers audio</strong> (MP3, WAV...). Importez un enregistrement et NotebookLM le retranscrira automatiquement.
+          </div>
+        `,
+        footer: ''
+      },
+      3: {
+        title: "Transcription automatique",
+        body: `
+          <p>Sous la vidéo (ou à la place du lecteur pour un fichier audio), NotebookLM affiche la <strong>retranscription complète et automatique</strong> du contenu audio ou vidéo.</p>
+
+          <h3>Qualité de la transcription</h3>
+          <ul>
+            <li>La transcription est <strong>globalement fidèle et exploitable</strong> : les phrases sont correctement retranscrites</li>
+            <li>Elle peut être utilisée pour <strong>transcrire des réunions</strong>, des entretiens, des conférences ou tout autre enregistrement audio/vidéo</li>
+            <li>L'IA analyse ensuite ce texte comme n'importe quel document pour répondre à vos questions</li>
+          </ul>
+
+          <h3>Limites à connaître</h3>
+          <ul>
+            <li><strong>Pas de time code :</strong> la transcription ne comporte pas d'horodatage (pas de repère temporel pour retrouver un passage dans la vidéo)</li>
+            <li><strong>Pas de diarisation :</strong> les différents interlocuteurs ne sont pas identifiés — le texte est retranscrit en continu, sans distinguer qui parle</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>En résumé :</strong> c'est un excellent outil pour <strong>exploiter le contenu</strong> d'un enregistrement avec l'IA, mais pas un outil de transcription professionnelle avec repérage des locuteurs et horodatage.
+          </div>
+        `,
+        footer: ''
+      }
+    };
+  </script>
+  <script src="script.js"></script>
+
+</body>
+</html>

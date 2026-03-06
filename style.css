@@ -677,7 +677,103 @@ body {
   opacity: 0.9;
 }
 
-/* --- Prev Page Banner (for page 2 back to page 1) --- */
+/* --- Dual Navigation (prev + next side by side) --- */
+.nav-dual {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.nav-banner {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  gap: 1rem;
+}
+
+.nav-banner::before {
+  content: '';
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.nav-banner-prev {
+  background: linear-gradient(135deg, #64748B 0%, #94A3B8 100%);
+  box-shadow: 0 4px 15px rgba(100, 116, 139, 0.3);
+}
+
+.nav-banner-prev::before {
+  top: -50%;
+  left: -20%;
+}
+
+.nav-banner-prev:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(100, 116, 139, 0.4);
+}
+
+.nav-banner-prev:hover .nav-banner-arrow {
+  transform: translateX(-6px);
+}
+
+.nav-banner-next {
+  background: linear-gradient(135deg, var(--primary) 0%, #818CF8 100%);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
+}
+
+.nav-banner-next::before {
+  top: -50%;
+  right: -20%;
+}
+
+.nav-banner-next:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.45);
+}
+
+.nav-banner-next:hover .nav-banner-arrow {
+  transform: translateX(6px);
+}
+
+.nav-banner-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+}
+
+.nav-banner-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+  font-weight: 600;
+}
+
+.nav-banner-title {
+  font-size: 1.125rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.nav-banner-arrow {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  opacity: 0.9;
+}
+
+/* --- Prev Page Banner (legacy, kept for single back links) --- */
 .prev-page-banner {
   display: flex;
   align-items: center;
@@ -736,6 +832,14 @@ body {
 
   .guide-header h1 {
     font-size: 1.375rem;
+  }
+
+  .nav-dual {
+    flex-direction: column;
+  }
+
+  .nav-banner-title {
+    font-size: 1rem;
   }
 
   .hotspot {

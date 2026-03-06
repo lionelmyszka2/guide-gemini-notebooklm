@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NotebookLM - Fonctionnalités avancées</title>
+  <title>NotebookLM - Vérification des sources</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -20,18 +20,8 @@
   </nav>
 
   <main class="guide-page">
-    <a href="notebooklm.html" class="prev-page-banner">
-      <span class="prev-page-arrow">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M19 12H5"></path>
-          <path d="M12 19l-7-7 7-7"></path>
-        </svg>
-      </span>
-      Retour à la vue principale
-    </a>
-
     <div class="guide-header">
-      <h1>NotebookLM &mdash; Vérifier les sources</h1>
+      <h1>NotebookLM &mdash; Vérification des sources</h1>
       <div class="guide-intro">
         <p>Quand NotebookLM répond à vos questions, chaque affirmation est <strong>liée à vos sources</strong> grâce à des références numérotées. Vous pouvez à tout moment <strong>vérifier d'où vient l'information</strong>, consulter l'extrait original et naviguer dans vos documents. C'est la grande force de NotebookLM : une IA transparente qui vous montre ses preuves.</p>
       </div>
@@ -41,7 +31,7 @@
     <div class="screenshot-container" id="screenshotContainer">
       <img
         src="images/notebooklm-page2.png"
-        alt="Fonctionnalités avancées de NotebookLM - Vérification des sources"
+        alt="NotebookLM - Vérification des sources"
         class="screenshot-img"
         id="screenshotImg"
       >
@@ -105,6 +95,34 @@
     <div class="legend">
       <span class="legend-dot"></span>
       Cliquez sur une pastille pour en savoir plus
+    </div>
+
+    <!-- Navigation double : ← Page 1 / Page 3 → -->
+    <div class="nav-dual">
+      <a href="notebooklm.html" class="nav-banner nav-banner-prev">
+        <div class="nav-banner-arrow">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5"></path>
+            <path d="M12 19l-7-7 7-7"></path>
+          </svg>
+        </div>
+        <div class="nav-banner-content">
+          <span class="nav-banner-label">Page précédente</span>
+          <span class="nav-banner-title">Vue principale</span>
+        </div>
+      </a>
+      <a href="notebooklm-page3.html" class="nav-banner nav-banner-next">
+        <div class="nav-banner-content" style="text-align: right;">
+          <span class="nav-banner-label">Page suivante</span>
+          <span class="nav-banner-title">Contenu d'une source</span>
+        </div>
+        <div class="nav-banner-arrow">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+          </svg>
+        </div>
+      </a>
     </div>
   </main>
 
