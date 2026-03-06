@@ -36,6 +36,8 @@
       <!-- Zone highlights (shown on hotspot hover) -->
       <div class="zone-highlight" id="zone-2" style="left: 0%; top: 17%; width: 26.5%; height: 83%;"></div>
       <div class="zone-highlight" id="zone-3" style="left: 26.5%; top: 7.5%; width: 47.5%; height: 92.5%;"></div>
+      <div class="zone-highlight" id="zone-4" style="left: 74%; top: 10%; width: 26%; height: 47%;"></div>
+      <div class="zone-highlight" id="zone-5" style="left: 74%; top: 57%; width: 26%; height: 43%;"></div>
 
       <!-- Hotspot 1 : Ajouter des sources -->
       <button
@@ -74,11 +76,54 @@
         <span class="hotspot-number">3</span>
         <span class="hotspot-pulse"></span>
       </button>
+
+      <!-- Hotspot 4 : Studio - Outils de création -->
+      <button
+        class="hotspot"
+        data-hotspot="4"
+        data-tooltip="Studio : outils de création"
+        data-zone="zone-4"
+        style="left: 87%; top: 30%;"
+        aria-label="Annotation 4 : Studio - Outils de création"
+      >
+        <span class="hotspot-number">4</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 5 : Résultats du Studio -->
+      <button
+        class="hotspot"
+        data-hotspot="5"
+        data-tooltip="Résultats générés"
+        data-zone="zone-5"
+        style="left: 87%; top: 70%;"
+        aria-label="Annotation 5 : Résultats du Studio"
+      >
+        <span class="hotspot-number">5</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 6 : Paramètres de la Discussion -->
+      <button
+        class="hotspot"
+        data-hotspot="6"
+        data-tooltip="Paramètres de conversation"
+        style="left: 70%; top: 8.5%;"
+        aria-label="Annotation 6 : Paramètres de la Discussion"
+      >
+        <span class="hotspot-number">6</span>
+        <span class="hotspot-pulse"></span>
+      </button>
     </div>
 
     <div class="legend">
       <span class="legend-dot"></span>
       Cliquez sur une pastille pour en savoir plus
+    </div>
+
+    <div class="page-navigation">
+      <span class="page-nav-info">Page 1/2 &mdash; Vue principale</span>
+      <a href="notebooklm-page2.html" class="page-nav-btn next">Fonctionnalités avancées &rarr;</a>
     </div>
   </main>
 
@@ -151,7 +196,7 @@
         footer: ''
       },
       3: {
-        title: "Espace Discussion",
+        title: "L'espace Discussion",
         body: `
           <p>L'<strong>espace Discussion</strong> est le cœur de NotebookLM. C'est ici que vous interagissez avec l'IA à propos de vos sources.</p>
 
@@ -177,6 +222,73 @@
 
           <div class="highlight-box">
             <strong>Astuce :</strong> vous pouvez poser des questions très précises comme « Compare les données du chapitre 3 avec celles du document X » — l'IA croisera vos sources pour vous répondre.
+          </div>
+        `,
+        footer: ''
+      },
+      4: {
+        title: "Le Studio : outils de création",
+        body: `
+          <p>Le <strong>Studio</strong> est le panneau de droite. Il regroupe tous les outils de création automatique de NotebookLM, alimentés par vos sources.</p>
+
+          <h3>Les outils disponibles</h3>
+          <ul>
+            <li><strong>Résumé audio</strong> : génère un podcast conversationnel à deux voix qui résume vos sources de façon naturelle et engageante</li>
+            <li><strong>Résumé vidéo</strong> : crée une vidéo de synthèse à partir de vos documents</li>
+            <li><strong>Carte mentale</strong> : produit une carte mentale visuelle organisant les concepts clés de vos sources</li>
+            <li><strong>Rapports</strong> : rédige un rapport structuré et détaillé à partir de vos documents</li>
+            <li><strong>Fiches d'apprentissage</strong> : génère des fiches de révision (type flashcards) pour mémoriser les informations</li>
+            <li><strong>Quiz</strong> : crée un questionnaire à choix multiples pour tester vos connaissances</li>
+            <li><strong>Infographie</strong> : produit une représentation visuelle synthétique des données</li>
+            <li><strong>Présentation</strong> : génère un support de présentation structuré (type diaporama)</li>
+            <li><strong>Tableau de données</strong> : extrait et organise les données de vos sources dans un tableau</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>Bon à savoir :</strong> chaque outil de création peut être personnalisé grâce au <strong>crayon d'édition</strong> (icône ✏️) qui apparaît à côté. Vous pouvez ainsi préciser vos instructions avant de générer le contenu.
+          </div>
+        `,
+        footer: ''
+      },
+      5: {
+        title: "Résultats générés",
+        body: `
+          <p>La partie basse du Studio affiche <strong>tous les contenus que vous avez générés</strong> avec les outils du Studio.</p>
+
+          <h3>Ce que vous voyez ici</h3>
+          <ul>
+            <li>Chaque résultat affiche son <strong>titre</strong>, le <strong>nombre de sources</strong> utilisées et sa <strong>date de création</strong></li>
+            <li>Cliquez sur un résultat pour <strong>l'ouvrir et le consulter</strong></li>
+            <li>Le menu <strong>⋮</strong> (trois points) à droite permet de renommer, supprimer ou partager un résultat</li>
+          </ul>
+
+          <h3>Ajouter une note</h3>
+          <p>Le bouton <strong>« + Ajouter une note »</strong> en bas vous permet de créer manuellement une note dans le Studio, en plus des contenus générés automatiquement.</p>
+
+          <div class="highlight-box">
+            <strong>Astuce :</strong> les notes enregistrées depuis l'espace Discussion (bouton « Enregistrer dans une note ») apparaissent aussi ici. C'est votre espace de travail centralisé.
+          </div>
+        `,
+        footer: ''
+      },
+      6: {
+        title: "Paramètres de la Discussion",
+        body: `
+          <p>L'icône de <strong>paramètres</strong> (en haut à droite de la zone Discussion) vous permet de personnaliser le comportement de l'IA dans vos conversations.</p>
+
+          <h3>Personnaliser la conversation</h3>
+          <p>Vous pouvez configurer trois éléments clés :</p>
+          <ul>
+            <li><strong>L'objectif</strong> : définissez ce que vous cherchez à accomplir (ex. « préparer un conseil municipal », « rédiger une note de synthèse », « comprendre un texte réglementaire »)</li>
+            <li><strong>Le style</strong> : choisissez le ton des réponses (formel, pédagogique, synthétique, détaillé...)</li>
+            <li><strong>Le rôle</strong> : attribuez un rôle à l'IA (ex. « tu es un expert en finances publiques », « tu es un formateur qui vulgarise pour des élus »)</li>
+          </ul>
+
+          <h3>Pourquoi c'est utile ?</h3>
+          <p>En personnalisant ces paramètres, vous obtenez des réponses <strong>beaucoup plus pertinentes et adaptées</strong> à votre contexte. Au lieu de réponses génériques, l'IA calibre son vocabulaire, son niveau de détail et son angle d'analyse en fonction de vos besoins.</p>
+
+          <div class="highlight-box">
+            <strong>Exemple concret :</strong> si vous définissez le rôle « assistant juridique spécialisé en droit des collectivités » et l'objectif « préparer une délibération », l'IA structurera ses réponses comme un véritable conseil juridique, avec les références réglementaires appropriées.
           </div>
         `,
         footer: ''

@@ -586,6 +586,58 @@ body {
   box-shadow: 0 1px 3px rgba(249, 115, 22, 0.4);
 }
 
+/* --- Page Navigation --- */
+.page-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  padding: 1rem 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.page-nav-info {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.page-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.page-nav-btn.next {
+  background: var(--primary);
+  color: #fff;
+}
+
+.page-nav-btn.next:hover {
+  background: var(--primary-hover);
+  transform: translateX(2px);
+}
+
+.page-nav-btn.prev {
+  background: var(--bg);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.page-nav-btn.prev:hover {
+  color: var(--text);
+  border-color: var(--text-light);
+}
+
 /* --- Footer --- */
 .site-footer {
   text-align: center;
