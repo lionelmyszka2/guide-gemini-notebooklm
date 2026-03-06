@@ -31,25 +31,80 @@
     </a>
 
     <div class="guide-header">
-      <h1>NotebookLM &mdash; Fonctionnalités avancées</h1>
-      <p class="guide-subtitle">Capture d'écran et annotations à venir</p>
+      <h1>NotebookLM &mdash; Vérifier les sources</h1>
+      <div class="guide-intro">
+        <p>Quand NotebookLM répond à vos questions, chaque affirmation est <strong>liée à vos sources</strong> grâce à des références numérotées. Vous pouvez à tout moment <strong>vérifier d'où vient l'information</strong>, consulter l'extrait original et naviguer dans vos documents. C'est la grande force de NotebookLM : une IA transparente qui vous montre ses preuves.</p>
+      </div>
+      <p class="guide-subtitle">Cliquez sur les pastilles orange pour découvrir chaque fonctionnalité</p>
     </div>
 
     <div class="screenshot-container" id="screenshotContainer">
       <img
         src="images/notebooklm-page2.png"
-        alt="Fonctionnalités avancées de NotebookLM"
+        alt="Fonctionnalités avancées de NotebookLM - Vérification des sources"
         class="screenshot-img"
         id="screenshotImg"
       >
 
-      <!-- Les hotspots seront positionnés ici une fois la capture d'écran fournie -->
+      <!-- Zone highlights -->
+      <div class="zone-highlight" id="zone-1" style="left: 39%; top: 3.5%; width: 40%; height: 96.5%;"></div>
+      <div class="zone-highlight" id="zone-3" style="left: 0%; top: 3.5%; width: 39%; height: 96.5%;"></div>
+
+      <!-- Hotspot 1 : Zone Discussion avec réponse structurée -->
+      <button
+        class="hotspot"
+        data-hotspot="1"
+        data-tooltip="La discussion en action"
+        data-zone="zone-1"
+        style="left: 42%; top: 5.5%;"
+        aria-label="Annotation 1 : La discussion en action"
+      >
+        <span class="hotspot-number">1</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 2 : Survol d'une référence numérotée -->
+      <button
+        class="hotspot"
+        data-hotspot="2"
+        data-tooltip="Survol d'une référence"
+        style="left: 56%; top: 24%;"
+        aria-label="Annotation 2 : Survol d'une référence"
+      >
+        <span class="hotspot-number">2</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 3 : Clic ouvre la source à gauche -->
+      <button
+        class="hotspot"
+        data-hotspot="3"
+        data-tooltip="Source ouverte et surlignée"
+        data-zone="zone-3"
+        style="left: 19%; top: 50%;"
+        aria-label="Annotation 3 : Source ouverte et surlignée"
+      >
+        <span class="hotspot-number">3</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 4 : Fermer la source ouverte -->
+      <button
+        class="hotspot"
+        data-hotspot="4"
+        data-tooltip="Fermer la source"
+        style="left: 37%; top: 8.5%;"
+        aria-label="Annotation 4 : Fermer la source"
+      >
+        <span class="hotspot-number">4</span>
+        <span class="hotspot-pulse"></span>
+      </button>
 
     </div>
 
     <div class="legend">
       <span class="legend-dot"></span>
-      Capture d'écran et annotations à venir
+      Cliquez sur une pastille pour en savoir plus
     </div>
   </main>
 
@@ -68,9 +123,106 @@
     </div>
   </div>
 
+  <!-- Contenu des annotations -->
   <script>
-    // Le contenu sera ajouté quand la capture d'écran sera fournie
-    const pageContent = {};
+    const pageContent = {
+      1: {
+        title: "La discussion en action",
+        body: `
+          <p>Quand vous posez une question à NotebookLM, l'IA génère une <strong>réponse structurée et détaillée</strong>, organisée avec des titres, des listes à puces et une mise en forme claire.</p>
+
+          <h3>Des réponses sourcées</h3>
+          <ul>
+            <li>Chaque affirmation est accompagnée d'une <strong>référence numérotée</strong> (①②③④) qui renvoie à un passage précis de vos sources</li>
+            <li>L'IA ne répond qu'à partir de <strong>vos documents importés</strong> : elle n'invente rien</li>
+            <li>L'indicateur <strong>« 27 sources »</strong> en bas montre combien de sources ont été consultées pour élaborer la réponse</li>
+          </ul>
+
+          <h3>Une réponse exploitable</h3>
+          <ul>
+            <li>La réponse est <strong>structurée en sections</strong> (principes généraux, critères pratiques, cas particuliers...)</li>
+            <li>Les termes clés sont mis en <strong>gras</strong> pour faciliter la lecture rapide</li>
+            <li>Des <strong>exemples concrets</strong> illustrent chaque point (ex. : voirie, subventions, bâtiments...)</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>Bon à savoir :</strong> vous pouvez enchaîner les questions pour approfondir un point. L'IA garde le contexte de la conversation et peut croiser plusieurs sources pour vous répondre.
+          </div>
+        `,
+        footer: ''
+      },
+      2: {
+        title: "Survol d'une référence",
+        body: `
+          <p>Les petits <strong>chiffres encerclés</strong> (①②③④) dans la réponse sont des références vers vos sources. En <strong>survolant</strong> l'un de ces chiffres avec votre souris, un <strong>pop-up</strong> apparaît instantanément.</p>
+
+          <h3>Ce que montre le pop-up</h3>
+          <ul>
+            <li>L'<strong>extrait exact</strong> du document source qui a servi à rédiger l'affirmation</li>
+            <li>Suffisamment de contexte pour <strong>vérifier rapidement</strong> la pertinence de la citation</li>
+            <li>Le texte est affiché tel qu'il apparaît dans votre document original</li>
+          </ul>
+
+          <h3>Pourquoi c'est utile ?</h3>
+          <p>Ce survol rapide vous permet de <strong>vérifier une information sans quitter la conversation</strong>. Pas besoin d'ouvrir le document complet : un simple passage de souris suffit pour s'assurer que l'IA cite correctement vos sources.</p>
+
+          <div class="highlight-box">
+            <strong>Astuce :</strong> si le pop-up ne suffit pas et que vous voulez voir plus de contexte, <strong>cliquez</strong> sur le chiffre pour ouvrir la source complète (voir point 3).
+          </div>
+        `,
+        footer: ''
+      },
+      3: {
+        title: "Source ouverte et surlignée",
+        body: `
+          <p>Quand vous <strong>cliquez</strong> sur un chiffre de référence (①②③④), NotebookLM ouvre automatiquement la <strong>source correspondante dans la colonne de gauche</strong>.</p>
+
+          <h3>Ce qui se passe</h3>
+          <ul>
+            <li>La source s'ouvre et affiche son <strong>contenu intégral</strong> (le texte complet du document)</li>
+            <li>Le <strong>passage exact</strong> cité par l'IA est automatiquement <strong>surligné</strong> dans le document</li>
+            <li>La vue <strong>défile automatiquement</strong> jusqu'au passage concerné</li>
+          </ul>
+
+          <h3>Pourquoi c'est utile ?</h3>
+          <ul>
+            <li><strong>Vérifier le contexte complet :</strong> vous voyez le passage cité dans son environnement original, avec les paragraphes qui précèdent et suivent</li>
+            <li><strong>Évaluer la fiabilité :</strong> vous pouvez juger si l'IA a bien interprété le document ou si elle a sorti une phrase de son contexte</li>
+            <li><strong>Approfondir :</strong> vous pouvez lire la source plus en détail pour aller au-delà de ce que l'IA a résumé</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>Bon à savoir :</strong> la colonne de gauche fonctionne comme une liseuse. Vous pouvez y faire défiler le document, le lire en entier, et même poser de nouvelles questions à l'IA basées sur ce que vous découvrez.
+          </div>
+        `,
+        footer: ''
+      },
+      4: {
+        title: "Fermer la source ouverte",
+        body: `
+          <p>Quand une source est ouverte dans la colonne de gauche, vous verrez un <strong>petit symbole</strong> en haut à droite de la colonne (à côté du titre de la source).</p>
+
+          <h3>Ce que fait ce bouton</h3>
+          <ul>
+            <li>Il <strong>referme la source actuellement ouverte</strong></li>
+            <li>Vous revenez à la <strong>liste de toutes vos sources</strong> avec les cases à cocher</li>
+            <li>C'est le retour à la <strong>vue d'ensemble</strong> du panneau des sources</li>
+          </ul>
+
+          <h3>Quand l'utiliser ?</h3>
+          <ul>
+            <li>Après avoir <strong>vérifié un passage</strong> cité par l'IA, pour revenir à la vue générale</li>
+            <li>Pour <strong>sélectionner ou désélectionner</strong> des sources avant de poser une nouvelle question</li>
+            <li>Pour <strong>ouvrir une autre source</strong> directement depuis la liste</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>Astuce :</strong> vous pouvez aussi cliquer directement sur un autre chiffre de référence dans la discussion — cela fermera automatiquement la source en cours et ouvrira la nouvelle.
+          </div>
+        `,
+        footer: ''
+      }
+    };
   </script>
   <script src="script.js"></script>
 
