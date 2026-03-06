@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NotebookLM - Guide interactif</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">MeetFusion</a>
+    <div class="nav-links">
+      <a href="notebooklm.html" class="active">NotebookLM</a>
+      <a href="#" class="disabled">Gemini</a>
+    </div>
+  </nav>
+
+  <main class="guide-page">
+    <div class="guide-header">
+      <h1>NotebookLM &mdash; Vue principale</h1>
+      <p>Cliquez sur les pastilles orange pour découvrir chaque fonctionnalité</p>
+    </div>
+
+    <div class="screenshot-container" id="screenshotContainer">
+      <img
+        src="images/notebooklm-main.png"
+        alt="Interface principale de NotebookLM"
+        class="screenshot-img"
+        id="screenshotImg"
+      >
+
+      <!-- Zone highlights (shown on hotspot hover) -->
+      <div class="zone-highlight" id="zone-2" style="left: 0%; top: 17%; width: 26.5%; height: 83%;"></div>
+      <div class="zone-highlight" id="zone-3" style="left: 26.5%; top: 7.5%; width: 47.5%; height: 92.5%;"></div>
+
+      <!-- Hotspot 1 : Ajouter des sources -->
+      <button
+        class="hotspot"
+        data-hotspot="1"
+        data-tooltip="Ajouter des sources"
+        style="left: 14%; top: 14.5%;"
+        aria-label="Annotation 1 : Ajouter des sources"
+      >
+        <span class="hotspot-number">1</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 2 : Panneau des sources -->
+      <button
+        class="hotspot"
+        data-hotspot="2"
+        data-tooltip="Panneau des sources"
+        data-zone="zone-2"
+        style="left: 23.5%; top: 55%;"
+        aria-label="Annotation 2 : Panneau des sources"
+      >
+        <span class="hotspot-number">2</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 3 : Espace Discussion -->
+      <button
+        class="hotspot"
+        data-hotspot="3"
+        data-tooltip="Espace Discussion"
+        data-zone="zone-3"
+        style="left: 35%; top: 8.5%;"
+        aria-label="Annotation 3 : Espace Discussion"
+      >
+        <span class="hotspot-number">3</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+    </div>
+
+    <div class="legend">
+      <span class="legend-dot"></span>
+      Cliquez sur une pastille pour en savoir plus
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <div class="modal-inner">
+        <button class="modal-close" id="modalClose" aria-label="Fermer">&times;</button>
+        <div class="modal-header">
+          <span class="modal-badge" id="modalBadge">1</span>
+          <h2 class="modal-title" id="modalTitle"></h2>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+      </div>
+      <div class="modal-footer" id="modalFooter"></div>
+    </div>
+  </div>
+
+  <!-- Contenu des annotations -->
+  <script>
+    const pageContent = {
+      1: {
+        title: "Ajouter des sources",
+        body: `
+          <p>Le bouton <strong>« + Ajouter des sources »</strong> vous permet d'importer des documents dans votre notebook pour que l'IA puisse les analyser.</p>
+          <p>NotebookLM accepte de nombreux formats :</p>
+          <ul>
+            <li><strong>Documents</strong> : PDF, Google Docs, Google Slides</li>
+            <li><strong>Web</strong> : sites web (via URL), articles en ligne</li>
+            <li><strong>Texte</strong> : texte copié-collé directement</li>
+            <li><strong>Audio</strong> : fichiers MP3, WAV et autres formats audio</li>
+            <li><strong>Vidéo</strong> : vidéos YouTube (via URL)</li>
+          </ul>
+          <div class="highlight-box">
+            <strong>Bon à savoir :</strong> vous pouvez importer jusqu'à <strong>50 sources</strong> par notebook, et chaque source peut contenir jusqu'à 500 000 mots.
+          </div>
+        `,
+        footer: `<a href="notebooklm-sources.html" class="modal-link">Voir le détail de l'import des sources <span class="arrow">&rarr;</span></a>`
+      },
+      2: {
+        title: "Panneau des sources",
+        body: `
+          <p>Le panneau de gauche affiche <strong>toutes les sources importées</strong> dans votre notebook. C'est ici que vous gérez vos documents.</p>
+
+          <h3>Sélection des sources</h3>
+          <ul>
+            <li><strong>Cochez / décochez</strong> chaque source pour l'inclure ou l'exclure de la conversation avec l'IA</li>
+            <li>Utilisez <strong>« Sélectionner toutes les sources »</strong> pour tout activer d'un coup</li>
+            <li>L'IA ne répondra qu'à partir des sources cochées</li>
+          </ul>
+
+          <h3>Gestion des sources</h3>
+          <ul>
+            <li><strong>Cliquez sur une source</strong> pour l'ouvrir et consulter son contenu</li>
+            <li>Vous pouvez <strong>renommer</strong> une source pour mieux l'identifier</li>
+            <li>Vous pouvez <strong>supprimer</strong> une source dont vous n'avez plus besoin</li>
+            <li>Chaque source affiche une <strong>icône</strong> indiquant son type (PDF, site web, audio...)</li>
+          </ul>
+
+          <h3>Traitement des fichiers</h3>
+          <ul>
+            <li>Les <strong>PDF, Google Docs et sites web</strong> sont analysés directement par l'IA</li>
+            <li>Les <strong>fichiers audio</strong> (MP3, WAV...) sont <strong>automatiquement retranscrits</strong> en texte avant analyse</li>
+            <li>Les <strong>vidéos YouTube</strong> sont également <strong>retranscrites automatiquement</strong> grâce aux sous-titres</li>
+          </ul>
+
+          <h3>Recherche web intégrée</h3>
+          <p>La barre de recherche en haut du panneau vous permet de <strong>chercher de nouvelles sources directement sur le web</strong> et de les ajouter à votre notebook sans quitter l'interface.</p>
+        `,
+        footer: ''
+      },
+      3: {
+        title: "Espace Discussion",
+        body: `
+          <p>L'<strong>espace Discussion</strong> est le cœur de NotebookLM. C'est ici que vous interagissez avec l'IA à propos de vos sources.</p>
+
+          <h3>Le chatbot</h3>
+          <ul>
+            <li>Tapez votre question dans la barre <strong>« Commencez à écrire... »</strong> en bas de l'écran</li>
+            <li>L'IA répond en s'appuyant <strong>uniquement sur vos sources</strong> importées : elle ne va pas inventer d'informations</li>
+            <li>Le <strong>nombre de sources consultées</strong> pour chaque réponse est indiqué (ex. « 27 sources »)</li>
+          </ul>
+
+          <h3>Résumé automatique</h3>
+          <p>Dès l'ouverture du notebook, NotebookLM génère automatiquement un <strong>résumé de l'ensemble de vos sources</strong>, avec les concepts clés mis en gras pour faciliter la lecture.</p>
+
+          <h3>Questions suggérées</h3>
+          <p>NotebookLM vous propose des <strong>questions pertinentes</strong> pour démarrer la conversation, générées à partir du contenu de vos sources. Cliquez sur l'une d'elles pour obtenir une réponse immédiate.</p>
+
+          <h3>Actions sur les réponses</h3>
+          <ul>
+            <li><strong>Copier</strong> la réponse dans le presse-papiers</li>
+            <li><strong>Évaluer</strong> la réponse avec les boutons pouce haut / pouce bas</li>
+            <li><strong>Enregistrer dans une note</strong> pour conserver les réponses importantes dans le Studio</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>Astuce :</strong> vous pouvez poser des questions très précises comme « Compare les données du chapitre 3 avec celles du document X » — l'IA croisera vos sources pour vous répondre.
+          </div>
+        `,
+        footer: ''
+      }
+    };
+  </script>
+  <script src="script.js"></script>
+
+</body>
+</html>

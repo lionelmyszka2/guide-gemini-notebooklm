@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NotebookLM - Ajouter des sources</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">MeetFusion</a>
+    <div class="nav-links">
+      <a href="notebooklm.html" class="active">NotebookLM</a>
+      <a href="#" class="disabled">Gemini</a>
+    </div>
+  </nav>
+
+  <main class="guide-page">
+    <div class="breadcrumb">
+      <a href="notebooklm.html">NotebookLM</a>
+      <span class="separator">/</span>
+      <span class="current">Ajouter des sources</span>
+    </div>
+
+    <div class="guide-header">
+      <h1>Ajouter des sources</h1>
+      <p>Découvrez comment importer vos documents dans NotebookLM</p>
+    </div>
+
+    <div class="screenshot-container" id="screenshotContainer">
+      <img
+        src="images/notebooklm-sources.png"
+        alt="Interface d'import de sources NotebookLM"
+        class="screenshot-img"
+        id="screenshotImg"
+      >
+
+      <!-- Les hotspots seront positionnés ici une fois la capture d'écran fournie -->
+
+    </div>
+
+    <div class="legend">
+      <span class="legend-dot"></span>
+      Capture d'écran et annotations à venir
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <div class="modal-inner">
+        <button class="modal-close" id="modalClose" aria-label="Fermer">&times;</button>
+        <div class="modal-header">
+          <span class="modal-badge" id="modalBadge">1</span>
+          <h2 class="modal-title" id="modalTitle"></h2>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+      </div>
+      <div class="modal-footer" id="modalFooter"></div>
+    </div>
+  </div>
+
+  <script>
+    // Le contenu sera ajouté quand la capture d'écran sera fournie
+    const pageContent = {};
+  </script>
+  <script src="script.js"></script>
+
+</body>
+</html>
