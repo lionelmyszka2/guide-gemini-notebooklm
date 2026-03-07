@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemini - Recherche approfondie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .info-section {
+      max-width: 720px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .info-section h2 {
+      font-size: 1.25rem;
+      color: #1a73e8;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .info-section p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 0.8rem;
+    }
+    .info-section ul {
+      padding-left: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .info-section li {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 0.4rem;
+    }
+    .reminder-box {
+      background: #e8f0fe;
+      border-left: 4px solid #1a73e8;
+      padding: 1.2rem 1.5rem;
+      border-radius: 0 12px 12px 0;
+      margin: 1.5rem auto;
+      max-width: 720px;
+    }
+    .reminder-box .reminder-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+      color: #1a73e8;
+      font-size: 1.05rem;
+    }
+    .reminder-box .reminder-header svg {
+      flex-shrink: 0;
+    }
+    .reminder-box p,
+    .reminder-box ul {
+      margin: 0.4rem 0;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: #333;
+    }
+    .reminder-box ul {
+      padding-left: 1.2rem;
+    }
+    .reminder-box li {
+      margin-bottom: 0.3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">Guide Gemini & NotebookLM</a>
+    <div class="nav-links">
+      <a href="notebooklm.html">NotebookLM</a>
+      <a href="gemini.html" class="active">Gemini</a>
+    </div>
+  </nav>
+
+  <main class="guide-page">
+    <div class="guide-header">
+      <h1>Recherche approfondie</h1>
+      <div class="guide-intro">
+        <p>La <strong>Recherche approfondie</strong> (<em>Deep Research</em>) est une fonctionnalité avancée de Gemini qui va bien au-delà d'une simple réponse. Gemini élabore un véritable <strong>plan de recherche</strong>, explore méthodiquement de nombreuses sources sur le web, et produit un <strong>rapport structuré et sourcé</strong> — comme un assistant de recherche qui travaillerait pour vous pendant plusieurs minutes.</p>
+      </div>
+      <p class="guide-subtitle">Cliquez sur les pastilles orange pour découvrir chaque fonctionnalité</p>
+    </div>
+
+    <div class="screenshot-container" id="screenshotContainer">
+      <img
+        src="images/gemini-appro.png"
+        alt="Interface de Recherche approfondie Gemini avec le plan de recherche et les options Deep Research et Raisonnement"
+        class="screenshot-img"
+        id="screenshotImg"
+      >
+
+      <!-- Zone highlights -->
+      <div class="zone-highlight" id="zone-1" style="left: 30%; top: 1%; width: 53%; height: 38%;"></div>
+      <div class="zone-highlight" id="zone-2" style="left: 24%; top: 42%; width: 58%; height: 44%;"></div>
+      <div class="zone-highlight" id="zone-3" style="left: 27%; top: 89%; width: 14%; height: 5%;"></div>
+      <div class="zone-highlight" id="zone-4" style="left: 41%; top: 89%; width: 16%; height: 5%;"></div>
+
+      <!-- Hotspot 1 : La question de recherche -->
+      <button
+        class="hotspot"
+        data-hotspot="1"
+        data-tooltip="La question de recherche"
+        data-zone="zone-1"
+        style="left: 60%; top: 15%;"
+        aria-label="Annotation 1 : La question de recherche"
+      >
+        <span class="hotspot-number">1</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 2 : Le plan de recherche -->
+      <button
+        class="hotspot"
+        data-hotspot="2"
+        data-tooltip="Le plan de recherche"
+        data-zone="zone-2"
+        style="left: 60%; top: 65%;"
+        aria-label="Annotation 2 : Le plan de recherche"
+      >
+        <span class="hotspot-number">2</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 3 : Deep Research -->
+      <button
+        class="hotspot"
+        data-hotspot="3"
+        data-tooltip="Activer Deep Research"
+        data-zone="zone-3"
+        style="left: 34%; top: 91%;"
+        aria-label="Annotation 3 : Activer Deep Research"
+      >
+        <span class="hotspot-number">3</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 4 : Mode Raisonnement -->
+      <button
+        class="hotspot"
+        data-hotspot="4"
+        data-tooltip="Le mode Raisonnement"
+        data-zone="zone-4"
+        style="left: 50%; top: 91%;"
+        aria-label="Annotation 4 : Le mode Raisonnement"
+      >
+        <span class="hotspot-number">4</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+    </div>
+
+    <div class="legend">
+      <span class="legend-dot"></span>
+      Cliquez sur une pastille pour en savoir plus
+    </div>
+
+    <!-- Section d'explication sous la capture d'écran -->
+    <div class="info-section">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+        Un temps de réponse plus long, des résultats plus riches
+      </h2>
+      <p>Contrairement à une requête classique qui répond en quelques secondes, la Recherche approfondie prend <strong>entre 5 et 15 minutes</strong> selon la complexité du sujet et le nombre de sources à explorer. Pendant ce temps, Gemini navigue sur le web, analyse les contenus pertinents et synthétise ses découvertes.</p>
+      <p>Une fois la recherche terminée, vous obtenez un <strong>rapport détaillé et structuré</strong>, avec des références vers les sources consultées. Deux options s'offrent alors à vous :</p>
+      <ul>
+        <li><strong>Exporter vers Google Docs</strong> : le rapport est transformé en un document Google Docs complet, prêt à être partagé, annoté ou archivé.</li>
+        <li><strong>Copier-coller</strong> : copiez tout ou partie du rapport vers l'outil de votre choix (Word, messagerie, note interne, etc.).</li>
+      </ul>
+    </div>
+
+    <!-- Encadré de rappel -->
+    <div class="reminder-box">
+      <div class="reminder-header">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="16" x2="12" y2="12"/>
+          <line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+        Points importants à retenir
+      </div>
+      <ul>
+        <li><strong>Consommation de ressources</strong> : chaque recherche approfondie mobilise significativement plus de ressources qu'une requête classique. Réservez-la aux sujets qui nécessitent vraiment une exploration en profondeur.</li>
+        <li><strong>Fiabilité des résultats</strong> : même si le rapport est riche et structuré, les résultats ne sont <strong>pas fiables à 100 %</strong>. Il est indispensable de <strong>vérifier les informations</strong> en cliquant sur les sources citées dans le document pour s'assurer de leur exactitude.</li>
+        <li><strong>Limite mensuelle</strong> : avec un compte Google Workspace standard, le nombre de recherches approfondies est <strong>limité à 10 par période de 30 jours</strong>. Les formules avec extensions Gemini avancées peuvent offrir un quota plus élevé. Utilisez-les judicieusement pour des recherches à forte valeur ajoutée.</li>
+      </ul>
+    </div>
+
+    <div class="nav-dual">
+      <a href="gemini-page4.html" class="nav-banner nav-banner-prev">
+        <div class="nav-banner-arrow">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5"></path>
+            <path d="M12 19l-7-7 7-7"></path>
+          </svg>
+        </div>
+        <div class="nav-banner-content">
+          <span class="nav-banner-label">Page précédente</span>
+          <span class="nav-banner-title">Canvas</span>
+        </div>
+      </a>
+      <a href="gemini.html" class="nav-banner nav-banner-next">
+        <div class="nav-banner-content" style="text-align: right;">
+          <span class="nav-banner-label">Retour au début</span>
+          <span class="nav-banner-title">Découvrir Gemini</span>
+        </div>
+        <div class="nav-banner-arrow">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+          </svg>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <div class="modal-inner">
+        <button class="modal-close" id="modalClose" aria-label="Fermer">&times;</button>
+        <div class="modal-header">
+          <span class="modal-badge" id="modalBadge">1</span>
+          <h2 class="modal-title" id="modalTitle"></h2>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+      </div>
+      <div class="modal-footer" id="modalFooter"></div>
+    </div>
+  </div>
+
+  <!-- Contenu des annotations -->
+  <script>
+    const pageContent = {
+      1: {
+        title: "Formuler une question de recherche efficace",
+        body: `
+          <p>La Recherche approfondie est conçue pour des <strong>questions complexes</strong> qui nécessitent d'explorer de nombreuses sources. Pour obtenir les meilleurs résultats, votre requête doit être bien plus détaillée qu'une question classique.</p>
+
+          <h3>Les clés d'une bonne requête</h3>
+          <ul>
+            <li><strong>Expliquez le contexte</strong> : précisez qui vous êtes, dans quel cadre vous travaillez et pour quel public. Par exemple : <em>« Je suis responsable développement durable dans une communauté de communes rurale de 30 000 habitants »</em></li>
+            <li><strong>Décrivez la finalité</strong> : indiquez à quoi servira le résultat de la recherche. <em>« Je dois préparer des ateliers de brainstorming pour structurer notre Plan Climat »</em></li>
+            <li><strong>Donnez des détails précis</strong> : mentionnez le périmètre géographique, les contraintes, les thématiques prioritaires, les types de sources souhaitées</li>
+            <li><strong>Précisez le format attendu</strong> : un rapport structuré, une liste de recommandations, un comparatif, une synthèse, etc.</li>
+          </ul>
+
+          <h3>Exemple de requête bien formulée</h3>
+          <p>Plutôt que <em>« Donne-moi des idées pour un plan climat »</em>, préférez une requête détaillée qui donne tout le contexte nécessaire — comme celle visible dans cette capture d'écran, qui précise le rôle de l'utilisateur, le type de collectivité, les objectifs des ateliers et les pistes de recherche souhaitées.</p>
+
+          <div class="highlight-box">
+            <strong>Astuce :</strong> plus votre requête est riche en contexte et en détails, plus Gemini pourra affiner son plan de recherche et vous livrer des résultats pertinents et exploitables.
+          </div>
+        `,
+        footer: ''
+      },
+      2: {
+        title: "Le plan de recherche",
+        body: `
+          <p>Avant de lancer sa recherche, Gemini vous propose un <strong>plan de recherche structuré</strong>. C'est une étape clé qui vous permet de valider — ou d'ajuster — la direction que prendra l'exploration.</p>
+
+          <h3>Comment fonctionne le plan</h3>
+          <ul>
+            <li>Gemini analyse votre requête et identifie les <strong>axes de recherche</strong> les plus pertinents</li>
+            <li>Il présente un plan numéroté avec les différentes pistes qu'il compte explorer</li>
+            <li>Chaque axe décrit le type de sources et d'informations qui seront recherchées</li>
+          </ul>
+
+          <h3>Valider ou modifier le plan</h3>
+          <ul>
+            <li><strong>Si le plan vous convient</strong> : validez-le et Gemini lancera immédiatement la recherche</li>
+            <li><strong>Si vous souhaitez des ajustements</strong> : demandez à Gemini de modifier certains axes, d'en ajouter ou d'en retirer avant de lancer la recherche</li>
+            <li>Vous pouvez aussi demander à <strong>approfondir un axe particulier</strong> ou à <strong>élargir le périmètre</strong> de recherche</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>Bon à savoir :</strong> prenez le temps de lire le plan attentivement. C'est le moment idéal pour réorienter la recherche si nécessaire, car une fois lancée, la Recherche approfondie va explorer le web pendant plusieurs minutes.
+          </div>
+        `,
+        footer: ''
+      },
+      3: {
+        title: "Sélectionner le mode Deep Research",
+        body: `
+          <p>Pour utiliser la Recherche approfondie, il faut <strong>sélectionner explicitement</strong> le mode <strong>Deep Research</strong> avant d'envoyer votre requête. Ce n'est pas le mode par défaut de Gemini.</p>
+
+          <h3>Comment activer Deep Research</h3>
+          <ul>
+            <li>Dans la barre de saisie en bas de l'écran, repérez les sélecteurs de mode situés à côté du champ de texte</li>
+            <li>Cliquez sur <strong>Deep Research</strong> pour l'activer — il apparaît alors en surbrillance</li>
+            <li>Le mode reste actif pour votre requête en cours — vous pouvez le désactiver pour revenir à une conversation classique</li>
+          </ul>
+
+          <h3>Quand utiliser Deep Research ?</h3>
+          <ul>
+            <li><strong>Sujets complexes</strong> nécessitant de croiser de nombreuses sources</li>
+            <li><strong>Benchmarks et comparatifs</strong> entre différentes pratiques ou solutions</li>
+            <li><strong>Synthèses documentaires</strong> sur un thème précis</li>
+            <li><strong>Recherches préparatoires</strong> pour un rapport, un projet ou une présentation</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>Important :</strong> n'oubliez pas de sélectionner Deep Research <em>avant</em> d'envoyer votre message. Si vous envoyez votre requête en mode classique, Gemini fournira une réponse standard au lieu de lancer une recherche approfondie.
+          </div>
+        `,
+        footer: ''
+      },
+      4: {
+        title: "Combiner avec le mode Raisonnement",
+        body: `
+          <p>Le mode <strong>Raisonnement</strong> est un complément idéal de la Recherche approfondie. Lorsqu'il est activé, Gemini décompose les problèmes complexes de manière plus méthodique et fournit des analyses mieux structurées.</p>
+
+          <h3>Pourquoi combiner les deux ?</h3>
+          <ul>
+            <li><strong>Analyse plus fine</strong> : le mode Raisonnement pousse Gemini à mieux analyser et recouper les informations trouvées pendant la recherche</li>
+            <li><strong>Meilleure synthèse</strong> : les résultats sont organisés de manière plus logique et plus exploitable</li>
+            <li><strong>Détection des nuances</strong> : Gemini identifie mieux les contradictions entre les sources et les points de débat</li>
+          </ul>
+
+          <h3>Comment l'activer</h3>
+          <ul>
+            <li>Dans la barre de saisie, cliquez sur le sélecteur <strong>Raisonnement</strong> en complément de Deep Research</li>
+            <li>Les deux modes fonctionnent ensemble pour produire un rapport de recherche plus complet et mieux argumenté</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>Bonne pratique :</strong> pour vos recherches les plus importantes, activez systématiquement le mode Raisonnement en même temps que Deep Research. Le temps de traitement sera légèrement plus long, mais la qualité du rapport final sera sensiblement meilleure.
+          </div>
+        `,
+        footer: ''
+      }
+    };
+  </script>
+  <script src="script.js"></script>
+
+</body>
+</html>
