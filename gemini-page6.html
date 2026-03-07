@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemini - Les Gems</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .info-section {
+      max-width: 720px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .info-section h2 {
+      font-size: 1.25rem;
+      color: #1a73e8;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .info-section p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 0.8rem;
+    }
+    .info-section ul {
+      padding-left: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .info-section li {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 0.4rem;
+    }
+    .reminder-box {
+      background: #e8f0fe;
+      border-left: 4px solid #1a73e8;
+      padding: 1.2rem 1.5rem;
+      border-radius: 0 12px 12px 0;
+      margin: 1.5rem auto;
+      max-width: 720px;
+    }
+    .reminder-box .reminder-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+      color: #1a73e8;
+      font-size: 1.05rem;
+    }
+    .reminder-box .reminder-header svg {
+      flex-shrink: 0;
+    }
+    .reminder-box p,
+    .reminder-box ul {
+      margin: 0.4rem 0;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: #333;
+    }
+    .reminder-box ul {
+      padding-left: 1.2rem;
+    }
+    .reminder-box li {
+      margin-bottom: 0.3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">Guide Gemini & NotebookLM</a>
+    <div class="nav-links">
+      <a href="notebooklm.html">NotebookLM</a>
+      <a href="gemini.html" class="active">Gemini</a>
+    </div>
+  </nav>
+
+  <main class="guide-page">
+    <div class="guide-header">
+      <h1>Les Gems &mdash; Créer un assistant personnalisé</h1>
+      <div class="guide-intro">
+        <p>Les <strong>Gems</strong> sont des <strong>assistants IA sur mesure</strong> que vous configurez une seule fois et réutilisez à volonté. Chaque Gem possède ses propres instructions, son rôle, son style de réponse et même sa <strong>base de connaissances</strong> (des fichiers que l'IA pourra consulter). C'est comme créer un collègue virtuel spécialisé : un expert financier, un rédacteur de courriers, un analyste de données&hellip; à vous de définir son profil.</p>
+      </div>
+      <p class="guide-subtitle">Cliquez sur les pastilles orange pour découvrir chaque fonctionnalité</p>
+    </div>
+
+    <div class="screenshot-container" id="screenshotContainer">
+      <img
+        src="images/gemini-gems.png"
+        alt="Interface de configuration d'un Gem dans Gemini avec les instructions, la base de connaissances et la prévisualisation"
+        class="screenshot-img"
+        id="screenshotImg"
+      >
+
+      <!-- Zone highlights -->
+      <div class="zone-highlight" id="zone-1" style="left: 13%; top: 5%; width: 50%; height: 17%;"></div>
+      <div class="zone-highlight" id="zone-2" style="left: 13%; top: 23%; width: 50%; height: 42%;"></div>
+      <div class="zone-highlight" id="zone-4" style="left: 13%; top: 68%; width: 35%; height: 20%;"></div>
+      <div class="zone-highlight" id="zone-5" style="left: 63%; top: 5%; width: 35%; height: 65%;"></div>
+
+      <!-- Hotspot 1 : Nom et Description -->
+      <button
+        class="hotspot"
+        data-hotspot="1"
+        data-tooltip="Nom et description du Gem"
+        data-zone="zone-1"
+        style="left: 35%; top: 12%;"
+        aria-label="Annotation 1 : Nom et description"
+      >
+        <span class="hotspot-number">1</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 2 : Instructions -->
+      <button
+        class="hotspot"
+        data-hotspot="2"
+        data-tooltip="Les instructions (prompt système)"
+        data-zone="zone-2"
+        style="left: 35%; top: 40%;"
+        aria-label="Annotation 2 : Instructions"
+      >
+        <span class="hotspot-number">2</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 3 : Outil par défaut -->
+      <button
+        class="hotspot"
+        data-hotspot="3"
+        data-tooltip="Outil par défaut"
+        style="left: 25%; top: 72%;"
+        aria-label="Annotation 3 : Outil par défaut"
+      >
+        <span class="hotspot-number">3</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 4 : Connaissances -->
+      <button
+        class="hotspot"
+        data-hotspot="4"
+        data-tooltip="Base de connaissances"
+        data-zone="zone-4"
+        style="left: 25%; top: 83%;"
+        aria-label="Annotation 4 : Base de connaissances"
+      >
+        <span class="hotspot-number">4</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 5 : Prévisualisation -->
+      <button
+        class="hotspot"
+        data-hotspot="5"
+        data-tooltip="Prévisualisation du Gem"
+        data-zone="zone-5"
+        style="left: 80%; top: 35%;"
+        aria-label="Annotation 5 : Prévisualisation"
+      >
+        <span class="hotspot-number">5</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+    </div>
+
+    <div class="legend">
+      <span class="legend-dot"></span>
+      Cliquez sur une pastille pour en savoir plus
+    </div>
+
+    <!-- Section partage -->
+    <div class="info-section">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+        Partage et collaboration
+      </h2>
+      <p>Les Gems peuvent être <strong>partagés au sein de votre organisation</strong> Google Workspace. Un Gem partagé conserve ses instructions et sa base de connaissances : vos collègues peuvent l'utiliser directement, sans avoir à le reconfigurer.</p>
+      <p>Pour partager un Gem, utilisez le bouton <strong>« Créer un lien partageable »</strong> en haut de l'écran de configuration. Les utilisateurs qui ouvrent le lien obtiennent leur propre copie du Gem. Ils ne voient <strong>pas vos instructions</strong> — ils interagissent simplement avec l'assistant tel que vous l'avez configuré.</p>
+      <ul>
+        <li><strong>Partage en lecture seule</strong> : les destinataires utilisent le Gem mais ne peuvent pas modifier ses instructions</li>
+        <li><strong>Copie indépendante</strong> : chaque utilisateur obtient sa propre copie qu'il peut personnaliser ensuite</li>
+        <li><strong>Pas de partage des conversations</strong> : les échanges de chacun avec le Gem restent privés</li>
+      </ul>
+    </div>
+
+    <!-- Encadré limites fichiers -->
+    <div class="reminder-box">
+      <div class="reminder-header">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="16" x2="12" y2="12"/>
+          <line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+        Limites de la base de connaissances
+      </div>
+      <ul>
+        <li><strong>Nombre de fichiers</strong> : vous pouvez importer jusqu'à <strong>10 fichiers</strong> par Gem dans la base de connaissances.</li>
+        <li><strong>Formats acceptés</strong> : PDF, fichiers Google (Docs, Sheets, Slides), fichiers texte, CSV, Excel et autres formats courants.</li>
+        <li><strong>Taille maximale</strong> : chaque fichier peut peser jusqu'à <strong>100 Mo</strong>. Les fichiers volumineux (tableaux Excel avec de nombreux onglets, PDF de centaines de pages) peuvent prendre plus de temps à être analysés.</li>
+        <li><strong>Pas de mise à jour automatique</strong> : si le fichier source est modifié (par exemple un Google Sheet), vous devez <strong>ré-importer manuellement</strong> la version à jour dans le Gem.</li>
+      </ul>
+    </div>
+
+    <div class="nav-dual">
+      <a href="gemini-page5.html" class="nav-banner nav-banner-prev">
+        <div class="nav-banner-arrow">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5"></path>
+            <path d="M12 19l-7-7 7-7"></path>
+          </svg>
+        </div>
+        <div class="nav-banner-content">
+          <span class="nav-banner-label">Page précédente</span>
+          <span class="nav-banner-title">Recherche approfondie</span>
+        </div>
+      </a>
+      <a href="gemini.html" class="nav-banner nav-banner-next">
+        <div class="nav-banner-content" style="text-align: right;">
+          <span class="nav-banner-label">Retour au début</span>
+          <span class="nav-banner-title">Découvrir Gemini</span>
+        </div>
+        <div class="nav-banner-arrow">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+          </svg>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <div class="modal-inner">
+        <button class="modal-close" id="modalClose" aria-label="Fermer">&times;</button>
+        <div class="modal-header">
+          <span class="modal-badge" id="modalBadge">1</span>
+          <h2 class="modal-title" id="modalTitle"></h2>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+      </div>
+      <div class="modal-footer" id="modalFooter"></div>
+    </div>
+  </div>
+
+  <!-- Contenu des annotations -->
+  <script>
+    const pageContent = {
+      1: {
+        title: "Nom et description du Gem",
+        body: `
+          <p>Le <strong>nom</strong> et la <strong>description</strong> sont la carte d'identité de votre Gem. Ils apparaissent dans la liste de vos Gems et dans le panneau de prévisualisation.</p>
+
+          <h3>Le nom</h3>
+          <ul>
+            <li>Choisissez un nom <strong>court et explicite</strong> qui décrit la fonction du Gem</li>
+            <li>Exemples : <em>« Analyse financière centre aquatique »</em>, <em>« Rédacteur de délibérations »</em>, <em>« Assistant marchés publics »</em></li>
+            <li>Le nom vous permet de retrouver rapidement le bon assistant parmi vos Gems</li>
+          </ul>
+
+          <h3>La description</h3>
+          <ul>
+            <li>Rédigez une phrase qui décrit <strong>ce que fait le Gem</strong> et comment l'utiliser</li>
+            <li>Cette description sera affichée quand vous (ou vos collègues) ouvrirez le Gem</li>
+            <li>Exemple ici : <em>« Fais glisser ton fichier Excel pour que je l'analyse »</em> — une consigne d'utilisation claire et directe</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>Astuce :</strong> une bonne description fait office de mode d'emploi. Indiquez comment interagir avec le Gem pour que l'utilisateur sache immédiatement quoi faire.
+          </div>
+        `,
+        footer: ''
+      },
+      2: {
+        title: "Les instructions — le cœur du Gem",
+        body: `
+          <p>Le champ <strong>Instructions</strong> est l'élément le plus important. C'est ici que vous définissez le <strong>comportement, le rôle et les méthodes</strong> de votre assistant personnalisé. C'est ce qu'on appelle le <em>prompt système</em>.</p>
+
+          <h3>Comment structurer les instructions</h3>
+          <p>Un bon prompt système se décompose en plusieurs blocs :</p>
+          <ul>
+            <li><strong>Rôle</strong> : « Agis en tant qu'expert en gestion d'exploitation pour centres aquatiques et analyse de données financières/techniques »</li>
+            <li><strong>Mission</strong> : « Analyse le fichier Excel par [période] pour identifier les tendances de performance et les anomalies critiques »</li>
+            <li><strong>Méthode d'analyse</strong> : détaillez les étapes que l'IA doit suivre (comparer les mois, identifier les écarts, vérifier les ratios...)</li>
+            <li><strong>Format de sortie</strong> : précisez comment les résultats doivent être présentés (tableaux, listes, alertes...)</li>
+          </ul>
+
+          <h3>Pourquoi c'est si important ?</h3>
+          <p>Sans instructions, un Gem se comporte comme un Gemini générique. Avec de bonnes instructions, il devient un <strong>spécialiste</strong> qui sait exactement quoi analyser, comment le présenter et quel vocabulaire utiliser.</p>
+
+          <div class="highlight-box">
+            <strong>Bonne pratique :</strong> testez votre Gem après chaque modification des instructions. Posez-lui les mêmes questions et vérifiez que les réponses s'améliorent. Itérez jusqu'à obtenir le comportement souhaité.
+          </div>
+        `,
+        footer: ''
+      },
+      3: {
+        title: "Outil par défaut",
+        body: `
+          <p>Le sélecteur <strong>« Outil par défaut »</strong> vous permet de choisir quel mode de Gemini sera activé automatiquement quand vous ouvrez ce Gem.</p>
+
+          <h3>Les options disponibles</h3>
+          <ul>
+            <li><strong>Aucun outil par défaut</strong> : le Gem utilise le mode standard, vous choisissez manuellement à chaque fois</li>
+            <li><strong>Recherche Google</strong> : le Gem accède automatiquement au web pour enrichir ses réponses</li>
+            <li><strong>Génération d'images</strong> : le Gem est configuré pour créer des visuels</li>
+            <li><strong>Exécution de code</strong> : le Gem peut exécuter du code Python pour des calculs ou de l'analyse de données</li>
+          </ul>
+
+          <h3>Quel intérêt ?</h3>
+          <p>Cela évite d'avoir à activer manuellement un outil à chaque utilisation. Par exemple, un Gem d'analyse de données peut être configuré avec l'<strong>exécution de code</strong> par défaut pour traiter automatiquement vos fichiers Excel.</p>
+
+          <div class="highlight-box">
+            <strong>Conseil :</strong> pour un Gem d'analyse de fichiers (Excel, CSV), activez <strong>l'exécution de code</strong> par défaut. Gemini pourra ainsi effectuer des calculs, générer des graphiques et manipuler vos données automatiquement.
+          </div>
+        `,
+        footer: ''
+      },
+      4: {
+        title: "La base de connaissances",
+        body: `
+          <p>La section <strong>Connaissances</strong> vous permet d'importer des <strong>fichiers de référence</strong> que le Gem pourra consulter à chaque conversation. C'est sa mémoire permanente.</p>
+
+          <h3>Comment ça fonctionne</h3>
+          <ul>
+            <li><strong>Importez des fichiers</strong> : glissez-déposez ou cliquez pour ajouter des documents (PDF, Excel, Google Docs...)</li>
+            <li>Les fichiers restent <strong>disponibles en permanence</strong> — pas besoin de les ré-importer à chaque conversation</li>
+            <li>Le Gem peut <strong>croiser les informations</strong> entre ses fichiers de connaissances et les fichiers que vous lui envoyez dans le chat</li>
+          </ul>
+
+          <h3>Cas d'usage concrets</h3>
+          <ul>
+            <li><strong>Gem d'analyse financière</strong> : importez vos modèles de rapport, vos grilles de ratios ou vos budgets de référence</li>
+            <li><strong>Gem de rédaction administrative</strong> : importez vos modèles de courriers, chartes graphiques, trames de délibérations</li>
+            <li><strong>Gem de veille réglementaire</strong> : importez les textes de loi, décrets ou circulaires pertinents</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>Important :</strong> les fichiers de la base de connaissances ne se mettent <strong>pas à jour automatiquement</strong>. Si vous modifiez un Google Sheet ou un document source, pensez à ré-importer la version à jour dans le Gem.
+          </div>
+        `,
+        footer: ''
+      },
+      5: {
+        title: "Prévisualisation du Gem",
+        body: `
+          <p>Le panneau de <strong>prévisualisation</strong> à droite vous montre exactement comment votre Gem apparaîtra aux utilisateurs.</p>
+
+          <h3>Ce que vous voyez</h3>
+          <ul>
+            <li>L'<strong>avatar</strong> du Gem (l'icône ronde avec la première lettre du nom)</li>
+            <li>Le <strong>nom</strong> du Gem tel qu'il sera affiché</li>
+            <li>La <strong>description</strong> visible par les utilisateurs</li>
+            <li>La <strong>barre de saisie</strong> pour tester directement le Gem</li>
+          </ul>
+
+          <h3>Tester avant de publier</h3>
+          <p>Vous pouvez utiliser la barre de saisie de la prévisualisation pour <strong>tester votre Gem en direct</strong>. C'est le meilleur moyen de vérifier que vos instructions produisent les résultats attendus avant de le partager avec vos collègues.</p>
+
+          <div class="highlight-box">
+            <strong>Astuce :</strong> après chaque modification des instructions, envoyez une question-test dans la prévisualisation pour vérifier immédiatement l'impact de vos changements.
+          </div>
+        `,
+        footer: ''
+      }
+    };
+  </script>
+  <script src="script.js"></script>
+
+</body>
+</html>

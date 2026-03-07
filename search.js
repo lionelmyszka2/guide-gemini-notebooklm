@@ -39,6 +39,13 @@
     { title: "Sélectionner Deep Research", page: "gemini-page5.html", section: "Recherche approfondie", keywords: "sélectionner activer deep research recherche approfondie mode paramètres" },
     { title: "Combiner avec le mode Raisonnement", page: "gemini-page5.html", section: "Recherche approfondie", keywords: "combiner raisonnement mode analyse synthèse deep research approfondie qualité" },
 
+    // Page 6 : Les Gems
+    { title: "Nom et description d'un Gem", page: "gemini-page6.html", section: "Les Gems", keywords: "gem gems nom description identité assistant personnalisé créer configurer" },
+    { title: "Instructions du Gem (prompt système)", page: "gemini-page6.html", section: "Les Gems", keywords: "instructions prompt système rôle mission méthode comportement gem gems personnaliser configurer" },
+    { title: "Outil par défaut du Gem", page: "gemini-page6.html", section: "Les Gems", keywords: "outil défaut gem gems recherche google code exécution images mode" },
+    { title: "Base de connaissances du Gem", page: "gemini-page6.html", section: "Les Gems", keywords: "base connaissances gem gems fichiers importer pdf excel documents référence mémoire" },
+    { title: "Prévisualisation et test du Gem", page: "gemini-page6.html", section: "Les Gems", keywords: "prévisualisation test gem gems aperçu vérifier tester partager publier" },
+
     // === NOTEBOOKLM ===
     // Page 1 : Vue principale
     { title: "Ajouter des sources", page: "notebooklm.html", section: "NotebookLM — Vue principale", keywords: "ajouter sources importer documents pdf google docs slides web url audio vidéo youtube texte" },
