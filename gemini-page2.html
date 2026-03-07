@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemini - Exploiter les réponses</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">Guide Gemini & NotebookLM</a>
+    <div class="nav-links">
+      <a href="notebooklm.html">NotebookLM</a>
+      <a href="gemini.html" class="active">Gemini</a>
+    </div>
+  </nav>
+
+  <main class="guide-page">
+    <div class="guide-header">
+      <h1>Exploiter les réponses de Gemini</h1>
+      <div class="guide-intro">
+        <p>Après chaque réponse, Gemini vous offre plusieurs possibilités : des <strong>suggestions pertinentes</strong> pour aller plus loin, un accès aux <strong>sources</strong> qui ont alimenté la réponse, et des <strong>actions rapides</strong> pour évaluer, copier ou partager le résultat. Découvrez comment tirer le meilleur parti de chaque échange.</p>
+      </div>
+      <p class="guide-subtitle">Cliquez sur les pastilles orange pour découvrir chaque fonctionnalité</p>
+    </div>
+
+    <div class="screenshot-container" id="screenshotContainer">
+      <img
+        src="images/gemini-actions.png"
+        alt="Actions disponibles après une réponse de Gemini"
+        class="screenshot-img"
+        id="screenshotImg"
+      >
+
+      <!-- Zone highlights -->
+      <div class="zone-highlight" id="zone-1" style="left: 40%; top: 68%; width: 36%; height: 7%;"></div>
+      <div class="zone-highlight" id="zone-2" style="left: 41%; top: 74.5%; width: 6%; height: 4.5%;"></div>
+      <div class="zone-highlight" id="zone-3" style="left: 40%; top: 79.5%; width: 9%; height: 3%;"></div>
+
+      <!-- Hotspot 1 : Suggestions de l'IA -->
+      <button
+        class="hotspot"
+        data-hotspot="1"
+        data-tooltip="Suggestions de l'IA"
+        data-zone="zone-1"
+        style="left: 77%; top: 71%;"
+        aria-label="Annotation 1 : Suggestions de l'IA"
+      >
+        <span class="hotspot-number">1</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 2 : Bouton Sources -->
+      <button
+        class="hotspot"
+        data-hotspot="2"
+        data-tooltip="Bouton Sources"
+        data-zone="zone-2"
+        style="left: 48%; top: 77%;"
+        aria-label="Annotation 2 : Bouton Sources"
+      >
+        <span class="hotspot-number">2</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 3 : Actions sur la réponse -->
+      <button
+        class="hotspot"
+        data-hotspot="3"
+        data-tooltip="Actions sur la réponse"
+        data-zone="zone-3"
+        style="left: 50%; top: 81%;"
+        aria-label="Annotation 3 : Actions sur la réponse"
+      >
+        <span class="hotspot-number">3</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+    </div>
+
+    <div class="legend">
+      <span class="legend-dot"></span>
+      Cliquez sur une pastille pour en savoir plus
+    </div>
+
+    <div class="nav-dual">
+      <a href="gemini.html" class="nav-banner nav-banner-prev">
+        <div class="nav-banner-arrow">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5"></path>
+            <path d="M12 19l-7-7 7-7"></path>
+          </svg>
+        </div>
+        <div class="nav-banner-content">
+          <span class="nav-banner-label">Page précédente</span>
+          <span class="nav-banner-title">Vue principale</span>
+        </div>
+      </a>
+      <a href="gemini-page3.html" class="nav-banner nav-banner-next">
+        <div class="nav-banner-content" style="text-align: right;">
+          <span class="nav-banner-label">Page suivante</span>
+          <span class="nav-banner-title">L'art du prompt</span>
+        </div>
+        <div class="nav-banner-arrow">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+          </svg>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <div class="modal-inner">
+        <button class="modal-close" id="modalClose" aria-label="Fermer">&times;</button>
+        <div class="modal-header">
+          <span class="modal-badge" id="modalBadge">1</span>
+          <h2 class="modal-title" id="modalTitle"></h2>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+      </div>
+      <div class="modal-footer" id="modalFooter"></div>
+    </div>
+  </div>
+
+  <!-- Contenu des annotations -->
+  <script>
+    const pageContent = {
+      1: {
+        title: "Suggestions de l'IA",
+        body: `
+          <p>Après chaque réponse, Gemini peut vous proposer des <strong>suggestions de suivi</strong>. Ce sont des pistes que l'IA identifie comme potentiellement utiles en fonction de votre conversation.</p>
+
+          <h3>Pourquoi c'est précieux</h3>
+          <ul>
+            <li><strong>Des idées auxquelles vous n'auriez pas pensé</strong> : ici, Gemini propose de rédiger une version plus courte pour le bulletin municipal ou une publication Facebook. Ce sont des prolongements concrets et utiles de votre demande initiale</li>
+            <li><strong>Un gain de temps</strong> : au lieu de reformuler vous-même, cliquez simplement sur la suggestion pour que Gemini enchaîne directement</li>
+            <li><strong>Une exploration guidée</strong> : les suggestions vous aident à explorer différents angles ou formats que vous n'aviez pas envisagés</li>
+          </ul>
+
+          <h3>Comment les utiliser</h3>
+          <ul>
+            <li><strong>Cliquez sur la suggestion</strong> pour que Gemini la traite immédiatement</li>
+            <li>Vous pouvez aussi <strong>reformuler la suggestion</strong> dans la barre de prompt pour l'adapter à vos besoins</li>
+            <li>Les suggestions varient selon le contexte : elles peuvent proposer des résumés, des traductions, des reformulations, des analyses complémentaires...</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>Astuce :</strong> n'hésitez pas à explorer les suggestions, même si elles ne correspondent pas exactement à ce que vous cherchez. Elles peuvent ouvrir des pistes intéressantes et enrichir votre réflexion.
+          </div>
+        `,
+        footer: ''
+      },
+      2: {
+        title: "Bouton Sources",
+        body: `
+          <p>Le bouton <strong>« Sources »</strong> vous permet d'accéder aux <strong>références</strong> que Gemini a utilisées pour construire sa réponse.</p>
+
+          <h3>Ce que vous y trouverez</h3>
+          <ul>
+            <li><strong>Des liens vers des sites web</strong> : articles, pages officielles, ressources en ligne que Gemini a consultés pour élaborer sa réponse</li>
+            <li><strong>Des extraits contextuels</strong> : pour chaque source, un court aperçu vous permet de juger rapidement de sa pertinence</li>
+            <li><strong>La traçabilité</strong> : vous pouvez vérifier les informations fournies en consultant directement les sources originales</li>
+          </ul>
+
+          <h3>Pourquoi consulter les sources ?</h3>
+          <ul>
+            <li><strong>Vérifier l'information</strong> : Gemini s'appuie sur ses connaissances générales, il est toujours bon de recouper avec les sources</li>
+            <li><strong>Approfondir un sujet</strong> : les sources vous donnent accès à des contenus plus détaillés que la réponse synthétique de Gemini</li>
+            <li><strong>Citer vos références</strong> : si vous réutilisez la réponse dans un document officiel, vous pouvez mentionner les sources consultées</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>Bon à savoir :</strong> les sources ne sont pas toujours disponibles pour chaque réponse. Quand elles le sont, le bouton « Sources » apparaît sous la réponse avec le nombre de références trouvées.
+          </div>
+        `,
+        footer: ''
+      },
+      3: {
+        title: "Actions sur la réponse",
+        body: `
+          <p>Sous chaque réponse de Gemini, une série de <strong>boutons d'action</strong> vous permet d'interagir avec le contenu généré.</p>
+
+          <h3>Les actions disponibles</h3>
+          <ul>
+            <li><strong>👍 Pouce haut</strong> : signalez que la réponse est utile et pertinente. Cela aide Gemini à s'améliorer</li>
+            <li><strong>👎 Pouce bas</strong> : indiquez que la réponse n'est pas satisfaisante. Vous pouvez préciser pourquoi (inexacte, incomplète, hors sujet...)</li>
+            <li><strong>Copier</strong> : copiez l'intégralité de la réponse dans votre presse-papiers pour la coller dans un document, un mail ou un autre outil</li>
+            <li><strong>Partager</strong> : partagez la réponse ou l'ensemble de la conversation avec un collègue</li>
+            <li><strong>Régénérer</strong> : demandez à Gemini de produire une nouvelle version de la réponse si la première ne vous convient pas</li>
+          </ul>
+
+          <h3>Les évaluations comptent</h3>
+          <p>Prendre quelques secondes pour évaluer les réponses (pouce haut ou bas) permet à Google d'améliorer Gemini. C'est un geste simple qui contribue à rendre l'outil plus performant pour tout le monde.</p>
+
+          <div class="highlight-box">
+            <strong>Astuce :</strong> le bouton <strong>Copier</strong> est particulièrement utile au quotidien. Gemini formate ses réponses avec des titres, des listes et du texte en gras — et cette mise en forme est conservée quand vous collez dans Google Docs, Word ou un mail.
+          </div>
+        `,
+        footer: ''
+      }
+    };
+  </script>
+  <script src="script.js"></script>
+
+</body>
+</html>
