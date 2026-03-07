@@ -36,7 +36,85 @@
         id="screenshotImg"
       >
 
-      <!-- Les zone highlights et hotspots seront ajoutés après réception de la capture d'écran -->
+      <!-- Zone highlights (shown on hotspot hover) -->
+      <div class="zone-highlight" id="zone-3" style="left: 23%; top: 4%; width: 77%; height: 85%;"></div>
+      <div class="zone-highlight" id="zone-4" style="left: 0%; top: 24%; width: 22%; height: 62%;"></div>
+      <div class="zone-highlight" id="zone-5" style="left: 0%; top: 12%; width: 22%; height: 11%;"></div>
+
+      <!-- Hotspot 1 : Barre de prompt -->
+      <button
+        class="hotspot"
+        data-hotspot="1"
+        data-tooltip="Barre de prompt"
+        style="left: 45%; top: 92%;"
+        aria-label="Annotation 1 : Barre de prompt"
+      >
+        <span class="hotspot-number">1</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 2 : Sélecteur de modèle -->
+      <button
+        class="hotspot"
+        data-hotspot="2"
+        data-tooltip="Sélecteur de modèle"
+        style="left: 68%; top: 92%;"
+        aria-label="Annotation 2 : Sélecteur de modèle"
+      >
+        <span class="hotspot-number">2</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 3 : Zone de conversation -->
+      <button
+        class="hotspot"
+        data-hotspot="3"
+        data-tooltip="Zone de conversation"
+        data-zone="zone-3"
+        style="left: 55%; top: 55%;"
+        aria-label="Annotation 3 : Zone de conversation"
+      >
+        <span class="hotspot-number">3</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 4 : Historique des conversations -->
+      <button
+        class="hotspot"
+        data-hotspot="4"
+        data-tooltip="Historique des conversations"
+        data-zone="zone-4"
+        style="left: 12%; top: 50%;"
+        aria-label="Annotation 4 : Historique des conversations"
+      >
+        <span class="hotspot-number">4</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 5 : Accès aux Gems -->
+      <button
+        class="hotspot"
+        data-hotspot="5"
+        data-tooltip="Accès aux Gems"
+        data-zone="zone-5"
+        style="left: 12%; top: 17%;"
+        aria-label="Annotation 5 : Accès aux Gems"
+      >
+        <span class="hotspot-number">5</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 6 : Actions sur la réponse -->
+      <button
+        class="hotspot"
+        data-hotspot="6"
+        data-tooltip="Actions sur la réponse"
+        style="left: 37%; top: 48%;"
+        aria-label="Annotation 6 : Actions sur la réponse"
+      >
+        <span class="hotspot-number">6</span>
+        <span class="hotspot-pulse"></span>
+      </button>
 
     </div>
 
