@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemini - Canvas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .vigilance-box {
+      background: #fff8e1;
+      border-left: 4px solid #ff9800;
+      padding: 1.2rem 1.5rem;
+      border-radius: 0 12px 12px 0;
+      margin: 1.5rem auto;
+      max-width: 720px;
+    }
+    .vigilance-box .vigilance-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+      color: #e65100;
+      font-size: 1.05rem;
+    }
+    .vigilance-box .vigilance-header svg {
+      flex-shrink: 0;
+    }
+    .vigilance-box p,
+    .vigilance-box ul {
+      margin: 0.4rem 0;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: #333;
+    }
+    .vigilance-box ul {
+      padding-left: 1.2rem;
+    }
+    .vigilance-box li {
+      margin-bottom: 0.3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">Guide Gemini & NotebookLM</a>
+    <div class="nav-links">
+      <a href="notebooklm.html">NotebookLM</a>
+      <a href="gemini.html" class="active">Gemini</a>
+    </div>
+  </nav>
+
+  <main class="guide-page">
+    <div class="guide-header">
+      <h1>Canvas</h1>
+      <div class="guide-intro">
+        <p><strong>Canvas</strong> est un espace de travail collaboratif qui transforme Gemini en véritable éditeur de documents. Au lieu de simplement recevoir une réponse dans le chat, Canvas ouvre un <strong>éditeur de texte</strong> à côté de la conversation : vous pouvez modifier le contenu directement, demander des ajustements à Gemini, et peaufiner votre document dans une interface proche d'un traitement de texte.</p>
+      </div>
+
+      <div class="vigilance-box">
+        <div class="vigilance-header">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e65100" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+          Point de vigilance : activer le mode Canvas
+        </div>
+        <p>Le mode Canvas <strong>ne s'active pas automatiquement</strong>. Deux possibilités :</p>
+        <ul>
+          <li><strong>Dès le départ</strong> : quand vous formulez une demande de rédaction, sélectionnez le mode <strong>Canvas</strong> dans les outils avant d'envoyer votre prompt. Canvas s'ouvrira directement.</li>
+          <li><strong>En cours de discussion</strong> : si vous êtes déjà dans une conversation classique, demandez simplement à Gemini <em>« Active le mode Canvas »</em> ou <em>« Ouvre Canvas »</em> dans le chat. Gemini basculera alors vers l'interface Canvas.</li>
+        </ul>
+      </div>
+
+      <p class="guide-subtitle">Cliquez sur les pastilles orange pour découvrir chaque fonctionnalité</p>
+    </div>
+
+    <div class="screenshot-container" id="screenshotContainer">
+      <img
+        src="images/gemini-canvas.png"
+        alt="Interface Canvas de Gemini avec le chat à gauche et l'éditeur de document à droite"
+        class="screenshot-img"
+        id="screenshotImg"
+      >
+
+      <!-- Zone highlights -->
+      <div class="zone-highlight" id="zone-1" style="left: 4%; top: 5%; width: 41%; height: 78%;"></div>
+      <div class="zone-highlight" id="zone-2" style="left: 46%; top: 1%; width: 52%; height: 5%;"></div>
+      <div class="zone-highlight" id="zone-3" style="left: 46%; top: 12%; width: 50%; height: 5%;"></div>
+      <div class="zone-highlight" id="zone-4" style="left: 46%; top: 17%; width: 50%; height: 45%;"></div>
+      <div class="zone-highlight" id="zone-5" style="left: 4%; top: 84%; width: 33%; height: 13%;"></div>
+
+      <!-- Hotspot 1 : Le panneau de conversation (chat à gauche) -->
+      <button
+        class="hotspot"
+        data-hotspot="1"
+        data-tooltip="Le panneau de conversation"
+        data-zone="zone-1"
+        style="left: 25%; top: 25%;"
+        aria-label="Annotation 1 : Le panneau de conversation"
+      >
+        <span class="hotspot-number">1</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 2 : L'en-tête du document Canvas -->
+      <button
+        class="hotspot"
+        data-hotspot="2"
+        data-tooltip="L'en-tête du document"
+        data-zone="zone-2"
+        style="left: 65%; top: 3%;"
+        aria-label="Annotation 2 : L'en-tête du document"
+      >
+        <span class="hotspot-number">2</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 3 : La barre de mise en forme -->
+      <button
+        class="hotspot"
+        data-hotspot="3"
+        data-tooltip="La barre de mise en forme"
+        data-zone="zone-3"
+        style="left: 82%; top: 14%;"
+        aria-label="Annotation 3 : La barre de mise en forme"
+      >
+        <span class="hotspot-number">3</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 4 : La zone d'édition collaborative -->
+      <button
+        class="hotspot"
+        data-hotspot="4"
+        data-tooltip="La zone d'édition"
+        data-zone="zone-4"
+        style="left: 88%; top: 40%;"
+        aria-label="Annotation 4 : La zone d'édition collaborative"
+      >
+        <span class="hotspot-number">4</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 5 : Piloter les modifications depuis le chat -->
+      <button
+        class="hotspot"
+        data-hotspot="5"
+        data-tooltip="Piloter les modifications"
+        data-zone="zone-5"
+        style="left: 20%; top: 88%;"
+        aria-label="Annotation 5 : Piloter les modifications depuis le chat"
+      >
+        <span class="hotspot-number">5</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+    </div>
+
+    <div class="legend">
+      <span class="legend-dot"></span>
+      Cliquez sur une pastille pour en savoir plus
+    </div>
+
+    <div class="nav-dual">
+      <a href="gemini-page3.html" class="nav-banner nav-banner-prev">
+        <div class="nav-banner-arrow">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5"></path>
+            <path d="M12 19l-7-7 7-7"></path>
+          </svg>
+        </div>
+        <div class="nav-banner-content">
+          <span class="nav-banner-label">Page précédente</span>
+          <span class="nav-banner-title">Les outils du chat</span>
+        </div>
+      </a>
+      <a href="gemini-page5.html" class="nav-banner nav-banner-next">
+        <div class="nav-banner-content" style="text-align: right;">
+          <span class="nav-banner-label">Page suivante</span>
+          <span class="nav-banner-title">Recherche approfondie</span>
+        </div>
+        <div class="nav-banner-arrow">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+          </svg>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <div class="modal-inner">
+        <button class="modal-close" id="modalClose" aria-label="Fermer">&times;</button>
+        <div class="modal-header">
+          <span class="modal-badge" id="modalBadge">1</span>
+          <h2 class="modal-title" id="modalTitle"></h2>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+      </div>
+      <div class="modal-footer" id="modalFooter"></div>
+    </div>
+  </div>
+
+  <!-- Contenu des annotations -->
+  <script>
+    const pageContent = {
+      1: {
+        title: "Le panneau de conversation",
+        body: `
+          <p>La partie gauche de l'écran conserve votre <strong>conversation avec Gemini</strong>. C'est l'endroit où vous dialoguez avec l'IA pour construire et améliorer votre document.</p>
+
+          <h3>Un dialogue au service du document</h3>
+          <ul>
+            <li>Chaque message que vous envoyez ici peut <strong>modifier le document</strong> dans la partie droite</li>
+            <li>Vous pouvez demander des ajustements ciblés : <em>« Raccourcis le deuxième paragraphe »</em>, <em>« Ajoute une introduction »</em>, <em>« Reformule de manière plus formelle »</em></li>
+            <li>Gemini applique les changements <strong>directement dans le document</strong>, en temps réel</li>
+          </ul>
+
+          <h3>L'historique de vos échanges</h3>
+          <p>Toutes vos demandes et les réponses de Gemini restent visibles dans le fil de conversation. Cela vous permet de <strong>suivre l'évolution du document</strong> et de comprendre les modifications apportées.</p>
+
+          <div class="highlight-box">
+            <strong>Astuce :</strong> pensez au panneau de conversation comme à un collaborateur à qui vous donnez des instructions. Plus vos consignes sont précises, meilleur sera le résultat dans le document.
+          </div>
+        `,
+        footer: ''
+      },
+      2: {
+        title: "L'en-tête du document",
+        body: `
+          <p>En haut de la zone Canvas, vous trouvez <strong>l'en-tête du document</strong> avec le titre et les contrôles principaux.</p>
+
+          <h3>Le titre du document</h3>
+          <ul>
+            <li>Canvas <strong>génère automatiquement un titre</strong> en fonction de votre demande initiale</li>
+            <li>Vous pouvez le modifier à tout moment en cliquant dessus</li>
+            <li>Le titre vous aide à retrouver votre document si vous y revenez plus tard</li>
+          </ul>
+
+          <h3>Les contrôles de l'en-tête</h3>
+          <ul>
+            <li><strong>Bouton de partage</strong> : partagez votre document Canvas avec d'autres personnes via un lien</li>
+            <li><strong>Options supplémentaires</strong> : accédez à des actions comme copier le contenu, exporter vers Google Docs ou télécharger le document</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>Bon à savoir :</strong> l'export vers <strong>Google Docs</strong> est particulièrement utile. Il transforme votre travail Canvas en un document Google Docs complet, avec toute la mise en forme conservée, prêt à être partagé ou imprimé.
+          </div>
+        `,
+        footer: ''
+      },
+      3: {
+        title: "La barre de mise en forme",
+        body: `
+          <p>Canvas intègre une <strong>barre d'outils de mise en forme</strong> similaire à celle d'un traitement de texte classique. C'est ce qui distingue Canvas d'une simple réponse de chat.</p>
+
+          <h3>Les outils disponibles</h3>
+          <ul>
+            <li><strong>Styles de texte</strong> : titres de différents niveaux, paragraphes normaux, citations</li>
+            <li><strong>Mise en forme</strong> : gras, italique, souligné pour mettre en valeur vos passages importants</li>
+            <li><strong>Listes</strong> : listes à puces ou numérotées pour structurer votre contenu</li>
+            <li><strong>Liens</strong> : insérez des liens hypertexte dans votre document</li>
+          </ul>
+
+          <h3>Un vrai éditeur de texte</h3>
+          <p>Contrairement aux réponses classiques du chat, Canvas vous offre un <strong>environnement d'édition complet</strong>. Vous pouvez sélectionner du texte, le mettre en forme, le réorganiser — exactement comme dans Google Docs ou Word.</p>
+
+          <div class="highlight-box">
+            <strong>Conseil :</strong> vous n'êtes pas obligé de tout formater manuellement. Vous pouvez aussi demander à Gemini de le faire pour vous : <em>« Mets le titre en gras et ajoute des puces pour les trois points clés »</em>.
+          </div>
+        `,
+        footer: ''
+      },
+      4: {
+        title: "La zone d'édition collaborative",
+        body: `
+          <p>C'est le cœur de Canvas : la <strong>zone d'édition</strong> où votre document prend forme. Ici, Gemini et vous travaillez ensemble sur le même texte.</p>
+
+          <h3>Comment ça fonctionne</h3>
+          <ul>
+            <li><strong>Gemini génère le contenu</strong> en réponse à vos demandes et le place directement dans cette zone</li>
+            <li>Vous pouvez <strong>cliquer n'importe où dans le texte</strong> pour le modifier directement, comme dans un document classique</li>
+            <li>Chaque modification demandée via le chat est <strong>appliquée en temps réel</strong> dans le document</li>
+          </ul>
+
+          <h3>Modifier du texte ciblé</h3>
+          <ul>
+            <li><strong>Sélectionnez un passage</strong> dans le document, puis demandez à Gemini de le reformuler, le raccourcir ou le développer</li>
+            <li>Gemini comprend le contexte et intervient uniquement sur la partie sélectionnée</li>
+            <li>Vous pouvez aussi <strong>supprimer, ajouter ou déplacer</strong> des paragraphes manuellement</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>Exemple concret :</strong> vous rédigez un discours d'inauguration. Gemini produit une première version. Vous relisez, vous modifiez directement une formule qui ne vous convient pas, puis vous demandez dans le chat : <em>« Ajoute un paragraphe de remerciements aux partenaires »</em>. Le document s'enrichit au fil de vos échanges.
+          </div>
+        `,
+        footer: ''
+      },
+      5: {
+        title: "Piloter les modifications depuis le chat",
+        body: `
+          <p>La <strong>barre de saisie</strong> en bas du panneau de conversation est votre outil principal pour <strong>piloter le document Canvas</strong>. C'est ici que vous envoyez vos instructions à Gemini.</p>
+
+          <h3>Ce que vous pouvez demander</h3>
+          <ul>
+            <li><strong>Rédiger</strong> : <em>« Rédige une introduction pour ce courrier »</em></li>
+            <li><strong>Reformuler</strong> : <em>« Reformule ce paragraphe de manière plus accessible »</em></li>
+            <li><strong>Compléter</strong> : <em>« Ajoute une section sur les délais de mise en œuvre »</em></li>
+            <li><strong>Ajuster le ton</strong> : <em>« Rends le texte plus formel »</em> ou <em>« Adopte un ton chaleureux »</em></li>
+            <li><strong>Structurer</strong> : <em>« Ajoute des titres et des sous-titres »</em></li>
+            <li><strong>Synthétiser</strong> : <em>« Réduis ce document à une page »</em></li>
+          </ul>
+
+          <h3>Un processus itératif</h3>
+          <p>L'intérêt de Canvas réside dans cette <strong>boucle continue</strong> : vous demandez, Gemini modifie, vous relisez, vous ajustez. En quelques échanges, vous passez d'une ébauche à un document abouti, prêt à être exporté et diffusé.</p>
+
+          <div class="highlight-box">
+            <strong>Astuce :</strong> n'hésitez pas à être directif et précis dans vos demandes. Par exemple, au lieu de dire <em>« Améliore le texte »</em>, dites <em>« Raccourcis les phrases de plus de deux lignes et remplace le jargon technique par des termes simples »</em>. Plus votre instruction est claire, plus le résultat sera pertinent.
+          </div>
+        `,
+        footer: ''
+      }
+    };
+  </script>
+  <script src="script.js"></script>
+
+</body>
+</html>
