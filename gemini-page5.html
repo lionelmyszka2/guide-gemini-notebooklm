@@ -77,18 +77,6 @@
 
   <nav class="navbar">
     <a href="index.html" class="nav-brand">Guide Gemini & NotebookLM</a>
-    <div class="nav-center">
-      <div class="search-container">
-        <div class="search-wrapper">
-          <span class="search-icon">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          </span>
-          <input type="text" class="search-input" placeholder="Rechercher une fonctionnalité..." aria-label="Rechercher">
-          <button class="search-clear" aria-label="Effacer">&times;</button>
-        </div>
-        <div class="search-results"></div>
-      </div>
-    </div>
     <div class="nav-links">
       <a href="notebooklm.html">NotebookLM</a>
       <a href="gemini.html" class="active">Gemini</a>
@@ -112,11 +100,9 @@
         id="screenshotImg"
       >
 
-      <!-- Zone highlights -->
-      <div class="zone-highlight" id="zone-1" style="left: 30%; top: 1%; width: 53%; height: 38%;"></div>
-      <div class="zone-highlight" id="zone-2" style="left: 24%; top: 42%; width: 58%; height: 44%;"></div>
-      <div class="zone-highlight" id="zone-3" style="left: 27%; top: 89%; width: 14%; height: 5%;"></div>
-      <div class="zone-highlight" id="zone-4" style="left: 41%; top: 89%; width: 16%; height: 5%;"></div>
+      <!-- Zone highlights (uniquement zones 1 et 2) -->
+      <div class="zone-highlight" id="zone-1" style="left: 33%; top: 1%; width: 51%; height: 37%;"></div>
+      <div class="zone-highlight" id="zone-2" style="left: 27%; top: 42%; width: 53%; height: 44%;"></div>
 
       <!-- Hotspot 1 : La question de recherche -->
       <button
@@ -149,7 +135,6 @@
         class="hotspot"
         data-hotspot="3"
         data-tooltip="Activer Deep Research"
-        data-zone="zone-3"
         style="left: 34%; top: 91%;"
         aria-label="Annotation 3 : Activer Deep Research"
       >
@@ -162,8 +147,7 @@
         class="hotspot"
         data-hotspot="4"
         data-tooltip="Le mode Raisonnement"
-        data-zone="zone-4"
-        style="left: 50%; top: 91%;"
+        style="left: 56%; top: 91%;"
         aria-label="Annotation 4 : Le mode Raisonnement"
       >
         <span class="hotspot-number">4</span>
@@ -357,7 +341,6 @@
     };
   </script>
   <script src="script.js"></script>
-  <script src="search.js"></script>
 
 </body>
 </html>

@@ -66,14 +66,6 @@ body {
   letter-spacing: -0.025em;
 }
 
-.nav-center {
-  display: flex;
-  align-items: center;
-  flex: 1;
-  justify-content: center;
-  padding: 0 1.5rem;
-}
-
 .nav-links {
   display: flex;
   gap: 0.5rem;
@@ -820,11 +812,48 @@ body {
   margin-top: 2rem;
 }
 
-/* --- Search --- */
+/* --- Search Section (Landing Page) --- */
+.search-section {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.search-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.search-section-header h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.search-section-desc {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 560px;
+  margin: 0 auto 1.5rem;
+}
+
 .search-container {
   position: relative;
   width: 100%;
   max-width: 320px;
+}
+
+.search-container-landing {
+  max-width: 520px;
+  margin: 0 auto;
 }
 
 .search-wrapper {
@@ -835,7 +864,7 @@ body {
 
 .search-icon {
   position: absolute;
-  left: 10px;
+  left: 14px;
   color: var(--text-light);
   pointer-events: none;
   display: flex;
@@ -844,11 +873,11 @@ body {
 
 .search-input {
   width: 100%;
-  padding: 0.5rem 2rem 0.5rem 2.25rem;
-  border: 1px solid var(--border);
-  border-radius: 20px;
+  padding: 0.875rem 2.5rem 0.875rem 2.75rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
   font-family: inherit;
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   color: var(--text);
   background: var(--bg);
   outline: none;
@@ -857,19 +886,20 @@ body {
 
 .search-input::placeholder {
   color: var(--text-light);
+  font-size: 0.875rem;
 }
 
 .search-input:focus {
   border-color: var(--primary);
   background: var(--bg-card);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
 }
 
 .search-clear {
   position: absolute;
-  right: 8px;
-  width: 20px;
-  height: 20px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
   border: none;
   background: var(--border);
   color: var(--text-secondary);
@@ -878,7 +908,7 @@ body {
   display: none;
   align-items: center;
   justify-content: center;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   line-height: 1;
   padding: 0;
   transition: background 0.2s;
@@ -891,17 +921,18 @@ body {
 
 .search-results {
   position: absolute;
-  top: calc(100% + 6px);
+  top: calc(100% + 8px);
   left: 0;
   right: 0;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
-  max-height: 380px;
+  max-height: 400px;
   overflow-y: auto;
   z-index: 200;
   display: none;
+  text-align: left;
 }
 
 .search-results.active {
@@ -911,8 +942,8 @@ body {
 .search-result-item {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.625rem 1rem;
+  gap: 0.875rem;
+  padding: 0.75rem 1.25rem;
   text-decoration: none;
   color: inherit;
   transition: background 0.15s;
@@ -929,21 +960,21 @@ body {
 }
 
 .search-result-icon {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   flex-shrink: 0;
-  width: 28px;
+  width: 32px;
   text-align: center;
 }
 
 .search-result-text {
   display: flex;
   flex-direction: column;
-  gap: 1px;
+  gap: 2px;
   min-width: 0;
 }
 
 .search-result-title {
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   font-weight: 600;
   color: var(--text);
   white-space: nowrap;
@@ -952,7 +983,7 @@ body {
 }
 
 .search-result-section {
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   color: var(--text-light);
   white-space: nowrap;
   overflow: hidden;
@@ -960,9 +991,9 @@ body {
 }
 
 .search-no-result {
-  padding: 1rem;
+  padding: 1.25rem;
   text-align: center;
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   color: var(--text-light);
 }
 
@@ -970,22 +1001,6 @@ body {
 @media (max-width: 768px) {
   .navbar {
     padding: 0 1rem;
-    flex-wrap: wrap;
-    height: auto;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    gap: 0.5rem;
-  }
-
-  .nav-center {
-    order: 3;
-    width: 100%;
-    padding: 0;
-    padding-bottom: 0.25rem;
-  }
-
-  .search-container {
-    max-width: 100%;
   }
 
   .hero h1 {
