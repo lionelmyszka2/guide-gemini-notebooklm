@@ -37,16 +37,18 @@
       >
 
       <!-- Zone highlights (shown on hotspot hover) -->
+      <div class="zone-highlight" id="zone-1" style="left: 24%; top: 88%; width: 58%; height: 9%;"></div>
       <div class="zone-highlight" id="zone-3" style="left: 23%; top: 4%; width: 77%; height: 85%;"></div>
-      <div class="zone-highlight" id="zone-4" style="left: 0%; top: 24%; width: 22%; height: 62%;"></div>
-      <div class="zone-highlight" id="zone-5" style="left: 0%; top: 12%; width: 22%; height: 11%;"></div>
+      <div class="zone-highlight" id="zone-4" style="left: 0%; top: 24%; width: 20%; height: 62%;"></div>
+      <div class="zone-highlight" id="zone-5" style="left: 0%; top: 2%; width: 20%; height: 5%;"></div>
 
       <!-- Hotspot 1 : Barre de prompt -->
       <button
         class="hotspot"
         data-hotspot="1"
         data-tooltip="Barre de prompt"
-        style="left: 45%; top: 92%;"
+        data-zone="zone-1"
+        style="left: 25%; top: 92%;"
         aria-label="Annotation 1 : Barre de prompt"
       >
         <span class="hotspot-number">1</span>
@@ -84,21 +86,21 @@
         data-hotspot="4"
         data-tooltip="Historique des conversations"
         data-zone="zone-4"
-        style="left: 12%; top: 50%;"
+        style="left: 10%; top: 50%;"
         aria-label="Annotation 4 : Historique des conversations"
       >
         <span class="hotspot-number">4</span>
         <span class="hotspot-pulse"></span>
       </button>
 
-      <!-- Hotspot 5 : Accès aux Gems -->
+      <!-- Hotspot 5 : Nouvelle discussion -->
       <button
         class="hotspot"
         data-hotspot="5"
-        data-tooltip="Accès aux Gems"
+        data-tooltip="Nouvelle discussion"
         data-zone="zone-5"
-        style="left: 12%; top: 17%;"
-        aria-label="Annotation 5 : Accès aux Gems"
+        style="left: 10%; top: 4%;"
+        aria-label="Annotation 5 : Nouvelle discussion"
       >
         <span class="hotspot-number">5</span>
         <span class="hotspot-pulse"></span>
@@ -109,7 +111,7 @@
         class="hotspot"
         data-hotspot="6"
         data-tooltip="Actions sur la réponse"
-        style="left: 37%; top: 48%;"
+        style="left: 28%; top: 52%;"
         aria-label="Annotation 6 : Actions sur la réponse"
       >
         <span class="hotspot-number">6</span>
@@ -178,17 +180,17 @@
       2: {
         title: "Sélecteur de modèle",
         body: `
-          <p>En haut de la barre de saisie, vous pouvez choisir le <strong>modèle d'IA</strong> qui va traiter votre demande.</p>
+          <p>Près de la barre de saisie, vous pouvez choisir le <strong>mode de fonctionnement</strong> de Gemini. Gemini 3 propose trois modes adaptés à différents besoins.</p>
 
-          <h3>Les modèles disponibles</h3>
+          <h3>Les trois modes de Gemini 3</h3>
           <ul>
-            <li><strong>2.5 Flash</strong> : rapide et efficace pour les tâches courantes (questions simples, résumés, traductions)</li>
-            <li><strong>2.5 Pro</strong> : plus puissant pour les tâches complexes (analyse approfondie, rédaction longue, raisonnement)</li>
-            <li><strong>Deep Research</strong> : mode de recherche approfondie qui explore le web et produit un rapport détaillé</li>
+            <li><strong>Rapide</strong> : répond rapidement aux questions courantes (résumés, rédaction, traductions, recherche d'informations). C'est le mode idéal pour la plupart des usages quotidiens</li>
+            <li><strong>Raisonnement</strong> : prend le temps de réfléchir pour résoudre les <strong>problèmes complexes</strong> (analyse approfondie, planification, comparaison de scénarios, synthèses multifactorielles)</li>
+            <li><strong>Pro</strong> (3.1 Pro) : le modèle le plus avancé, spécialisé dans les <strong>mathématiques et le code avancé</strong></li>
           </ul>
 
           <div class="highlight-box">
-            <strong>Conseil :</strong> pour la plupart des usages quotidiens, <strong>2.5 Flash</strong> suffit largement. Réservez <strong>2.5 Pro</strong> pour les demandes complexes et <strong>Deep Research</strong> pour les recherches approfondies.
+            <strong>Conseil :</strong> pour la grande majorité de vos besoins, le mode <strong>Rapide</strong> suffit largement. Le mode <strong>Raisonnement</strong> est utile quand vous avez besoin d'une analyse vraiment poussée. Le mode <strong>Pro</strong> est destiné aux usages techniques.
           </div>
         `,
         footer: ''
@@ -229,19 +231,19 @@
         footer: ''
       },
       5: {
-        title: "Accès aux Gems",
+        title: "Nouvelle discussion",
         body: `
-          <p>Les <strong>Gems</strong> sont des <strong>assistants personnalisés</strong> que vous pouvez créer ou utiliser dans Gemini. Ils sont accessibles depuis le panneau latéral.</p>
+          <p>Le bouton <strong>« Nouvelle discussion »</strong> en haut du panneau latéral est un réflexe essentiel à adopter. Cliquez dessus <strong>à chaque fois que vous changez de sujet</strong>.</p>
 
-          <h3>Qu'est-ce qu'un Gem ?</h3>
+          <h3>Pourquoi c'est important ?</h3>
           <ul>
-            <li>Un Gem est une <strong>version spécialisée</strong> de Gemini, configurée avec des instructions précises</li>
-            <li>Par exemple : un Gem « Conseiller juridique collectivités » qui répond toujours sous l'angle du droit public</li>
-            <li>Vous pouvez utiliser les <strong>Gems prêts à l'emploi</strong> ou <strong>créer les vôtres</strong></li>
+            <li><strong>Retrouver vos échanges facilement :</strong> chaque conversation porte un titre généré automatiquement. En séparant les sujets, vous les retrouvez bien plus vite dans l'historique de gauche</li>
+            <li><strong>Repartir sur une mémoire fraîche :</strong> Gemini conserve en mémoire tout ce qui a été dit dans une conversation. Si vous enchaînez des sujets différents dans le même fil, l'IA peut mélanger les contextes et produire des réponses moins pertinentes. Une nouvelle discussion remet les compteurs à zéro</li>
+            <li><strong>Obtenir de meilleures réponses :</strong> avec une mémoire dédiée à un seul sujet, Gemini comprend mieux votre demande et ses réponses sont plus précises et plus cohérentes</li>
           </ul>
 
           <div class="highlight-box">
-            <strong>Astuce :</strong> les Gems sont particulièrement utiles si vous posez régulièrement le même type de questions. Au lieu de reformuler le contexte à chaque fois, le Gem le fait pour vous automatiquement. Nous y reviendrons en détail page 4.
+            <strong>En résumé :</strong> pensez à Gemini comme un collègue. Si vous lui parlez d'urbanisme puis de budget puis de communication dans la même conversation, il risque de s'emmêler. Un nouveau sujet = une nouvelle discussion.
           </div>
         `,
         footer: ''
