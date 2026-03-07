@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemini - Les outils du chat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">Guide Gemini & NotebookLM</a>
+    <div class="nav-links">
+      <a href="notebooklm.html">NotebookLM</a>
+      <a href="gemini.html" class="active">Gemini</a>
+    </div>
+  </nav>
+
+  <main class="guide-page">
+    <div class="guide-header">
+      <h1>Les outils du chat</h1>
+      <div class="guide-intro">
+        <p>La barre de saisie de Gemini ne se limite pas à taper du texte. Elle intègre de <strong>nombreuses options</strong> pour enrichir vos conversations : importer des fichiers, activer des outils créatifs, choisir le bon mode de réponse ou même parler directement à l'IA. Découvrez toutes les possibilités à votre disposition.</p>
+      </div>
+      <p class="guide-subtitle">Cliquez sur les pastilles orange pour découvrir chaque fonctionnalité</p>
+    </div>
+
+    <div class="screenshot-container" id="screenshotContainer">
+      <img
+        src="images/gemini-main.png"
+        alt="Barre de saisie et options du chat Gemini"
+        class="screenshot-img"
+        id="screenshotImg"
+      >
+
+      <!-- Hotspot 1 : Ajouter des fichiers (+) -->
+      <button
+        class="hotspot"
+        data-hotspot="1"
+        data-tooltip="Ajouter des fichiers"
+        style="left: 39%; top: 88%;"
+        aria-label="Annotation 1 : Ajouter des fichiers"
+      >
+        <span class="hotspot-number">1</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 2 : Outils -->
+      <button
+        class="hotspot"
+        data-hotspot="2"
+        data-tooltip="Outils"
+        style="left: 44%; top: 93%;"
+        aria-label="Annotation 2 : Outils"
+      >
+        <span class="hotspot-number">2</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 3 : Sélecteur de modèle -->
+      <button
+        class="hotspot"
+        data-hotspot="3"
+        data-tooltip="Sélecteur de modèle"
+        style="left: 68%; top: 88%;"
+        aria-label="Annotation 3 : Sélecteur de modèle"
+      >
+        <span class="hotspot-number">3</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+      <!-- Hotspot 4 : Micro -->
+      <button
+        class="hotspot"
+        data-hotspot="4"
+        data-tooltip="Entrée vocale"
+        style="left: 76%; top: 93%;"
+        aria-label="Annotation 4 : Entrée vocale"
+      >
+        <span class="hotspot-number">4</span>
+        <span class="hotspot-pulse"></span>
+      </button>
+
+    </div>
+
+    <div class="legend">
+      <span class="legend-dot"></span>
+      Cliquez sur une pastille pour en savoir plus
+    </div>
+
+    <div class="nav-dual">
+      <a href="gemini-page2.html" class="nav-banner nav-banner-prev">
+        <div class="nav-banner-arrow">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5"></path>
+            <path d="M12 19l-7-7 7-7"></path>
+          </svg>
+        </div>
+        <div class="nav-banner-content">
+          <span class="nav-banner-label">Page précédente</span>
+          <span class="nav-banner-title">Exploiter les réponses</span>
+        </div>
+      </a>
+      <a href="gemini-page4.html" class="nav-banner nav-banner-next">
+        <div class="nav-banner-content" style="text-align: right;">
+          <span class="nav-banner-label">Page suivante</span>
+          <span class="nav-banner-title">Canvas</span>
+        </div>
+        <div class="nav-banner-arrow">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+          </svg>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <div class="modal-inner">
+        <button class="modal-close" id="modalClose" aria-label="Fermer">&times;</button>
+        <div class="modal-header">
+          <span class="modal-badge" id="modalBadge">1</span>
+          <h2 class="modal-title" id="modalTitle"></h2>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+      </div>
+      <div class="modal-footer" id="modalFooter"></div>
+    </div>
+  </div>
+
+  <!-- Contenu des annotations -->
+  <script>
+    const pageContent = {
+      1: {
+        title: "Ajouter des fichiers",
+        body: `
+          <p>Le bouton <strong>« + »</strong> à gauche de la barre de saisie ouvre un menu qui vous permet d'enrichir votre conversation avec des fichiers et des sources externes.</p>
+
+          <h3>Les options d'import</h3>
+          <ul>
+            <li><strong>Importer depuis l'ordinateur</strong> : ajoutez un PDF, une image, un tableur ou tout autre fichier stocké sur votre poste pour que Gemini l'analyse</li>
+            <li><strong>Ajouter depuis Google Drive</strong> : accédez directement à vos fichiers Drive (documents, feuilles de calcul, présentations) sans quitter Gemini</li>
+            <li><strong>Importer du code</strong> : collez ou importez du code source pour que Gemini vous aide à le comprendre, le corriger ou l'améliorer</li>
+          </ul>
+
+          <h3>Appeler NotebookLM comme source</h3>
+          <p>C'est l'une des options les plus puissantes : vous pouvez <strong>connecter un carnet NotebookLM</strong> directement à votre conversation Gemini.</p>
+          <ul>
+            <li>Gemini vous propose de <strong>choisir parmi vos carnets NotebookLM</strong> existants</li>
+            <li>Une fois le carnet sélectionné, Gemini répond <strong>à partir des sources que vous avez collectées</strong> dans ce carnet (vos PDF, sites web, audio, vidéos...)</li>
+            <li>C'est un excellent moyen de combiner la <strong>puissance conversationnelle de Gemini</strong> avec la <strong>rigueur documentaire de NotebookLM</strong></li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>Exemple concret :</strong> vous avez un carnet NotebookLM contenant tous les documents sur le PLU de votre commune. En le connectant à Gemini, vous pouvez lui demander « Quelles sont les zones constructibles selon le PLU ? » et obtenir une réponse basée sur vos propres documents.
+          </div>
+        `,
+        footer: ''
+      },
+      2: {
+        title: "Outils",
+        body: `
+          <p>Le champ <strong>« Outils »</strong> vous donne accès à des fonctionnalités spécialisées qui vont bien au-delà de la simple conversation textuelle.</p>
+
+          <h3>Les outils disponibles</h3>
+          <ul>
+            <li><strong>Créer des images</strong> : générez des visuels à partir d'une description textuelle. Utile pour illustrer un document, créer un visuel pour les réseaux sociaux ou préparer un support de communication</li>
+            <li><strong>Recherche approfondie</strong> : Gemini effectue une recherche web étendue et produit un rapport structuré et sourcé sur le sujet demandé. Idéal pour explorer un thème en profondeur</li>
+            <li><strong>Créer des vidéos</strong> : générez de courtes vidéos à partir d'instructions textuelles, utiles pour la communication ou la pédagogie</li>
+            <li><strong>Créer de la musique</strong> : composez des morceaux ou des ambiances sonores à partir d'une description</li>
+            <li><strong>Apprentissage guidé</strong> : activez un mode pédagogique où l'IA vous accompagne pas à pas pour apprendre un sujet, avec des explications progressives et des exercices</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>Bon à savoir :</strong> vous n'avez pas besoin d'activer manuellement ces outils pour les utiliser. Vous pouvez simplement formuler votre demande (« Génère-moi une image de... ») et Gemini activera l'outil approprié automatiquement. Le menu « Outils » est là pour vous rappeler ce qui est disponible.
+          </div>
+        `,
+        footer: ''
+      },
+      3: {
+        title: "Sélecteur de modèle",
+        body: `
+          <p>À droite de la barre de saisie, vous pouvez choisir le <strong>mode de fonctionnement</strong> de Gemini. Gemini 3 propose trois modes adaptés à différents besoins.</p>
+
+          <h3>Les trois modes de Gemini 3</h3>
+          <ul>
+            <li><strong>Rapide</strong> : répond rapidement aux questions courantes (résumés, rédaction, traductions, recherche d'informations). C'est le mode idéal pour la plupart des usages quotidiens</li>
+            <li><strong>Raisonnement</strong> : prend le temps de réfléchir pour résoudre les <strong>problèmes complexes</strong> (analyse approfondie, planification, comparaison de scénarios, synthèses multifactorielles)</li>
+            <li><strong>Pro</strong> (3.1 Pro) : le modèle le plus avancé, spécialisé dans les <strong>mathématiques et le code avancé</strong></li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>Conseil :</strong> pour la grande majorité de vos besoins, le mode <strong>Rapide</strong> suffit largement. Le mode <strong>Raisonnement</strong> est utile quand vous avez besoin d'une analyse vraiment poussée. Le mode <strong>Pro</strong> est destiné aux usages techniques.
+          </div>
+        `,
+        footer: ''
+      },
+      4: {
+        title: "Entrée vocale",
+        body: `
+          <p>Le bouton <strong>micro</strong> vous permet de <strong>parler directement à Gemini</strong> au lieu de taper votre question.</p>
+
+          <h3>Comment ça fonctionne</h3>
+          <ul>
+            <li><strong>Cliquez sur le micro</strong> : Gemini active la reconnaissance vocale et écoute votre demande</li>
+            <li><strong>Parlez naturellement</strong> : formulez votre question ou instruction comme vous le feriez à l'oral</li>
+            <li>Votre parole est <strong>automatiquement transcrite</strong> en texte dans la barre de saisie</li>
+            <li>Vous pouvez <strong>relire et corriger</strong> le texte avant de l'envoyer, ou l'envoyer directement</li>
+          </ul>
+
+          <h3>Pourquoi utiliser la voix ?</h3>
+          <ul>
+            <li><strong>Une expérience plus fluide</strong> : parler est souvent plus rapide que taper, surtout pour des demandes longues ou détaillées</li>
+            <li><strong>Plus naturel</strong> : formuler une demande à voix haute vous aide parfois à mieux structurer votre pensée</li>
+            <li><strong>Pratique en déplacement</strong> : sur mobile ou tablette, la dictée vocale est bien plus confortable que le clavier</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>Astuce :</strong> n'hésitez pas à être aussi précis à l'oral qu'à l'écrit. Gemini comprend très bien les instructions détaillées dictées vocalement. Vous pouvez dire par exemple : « Rédige un courrier aux habitants pour les informer des travaux de voirie, sur un ton formel et rassurant ».
+          </div>
+        `,
+        footer: ''
+      }
+    };
+  </script>
+  <script src="script.js"></script>
+
+</body>
+</html>
