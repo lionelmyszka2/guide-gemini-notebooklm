@@ -64,7 +64,22 @@
     // Page 3 : Contenu d'une source
     { title: "Guide sur la source", page: "notebooklm-page3.html", section: "Contenu d'une source", keywords: "guide source résumé thèmes clés suggestions questions personnalisées" },
     { title: "Vidéo intégrée", page: "notebooklm-page3.html", section: "Contenu d'une source", keywords: "vidéo intégrée youtube lecteur regarder directement" },
-    { title: "Transcription automatique", page: "notebooklm-page3.html", section: "Contenu d'une source", keywords: "transcription automatique sous-titres audio vidéo texte horodatage" }
+    { title: "Transcription automatique", page: "notebooklm-page3.html", section: "Contenu d'une source", keywords: "transcription automatique sous-titres audio vidéo texte horodatage" },
+
+    // === FICHE RÉFLEXE ===
+    // Page 1 : Quand solliciter l'IA
+    { title: "Temps économisé", page: "reflex.html", section: "Fiche Réflexe — Quand solliciter l'IA", keywords: "temps économisé gagner synthétiser résumer rédiger premier jet traduire reformuler rechercher comparer rapide" },
+    { title: "Pénibilité réduite", page: "reflex.html", section: "Fiche Réflexe — Quand solliciter l'IA", keywords: "pénibilité réduite tâche fastidieuse ennuyeuse relire corriger mettre en forme modèle standardiser répétitif" },
+    { title: "Qualité améliorée", page: "reflex.html", section: "Fiche Réflexe — Quand solliciter l'IA", keywords: "qualité améliorée enrichir améliorer rédaction cohérence challenger relecture adapter vulgariser" },
+    { title: "Capacité nouvelle", page: "reflex.html", section: "Fiche Réflexe — Quand solliciter l'IA", keywords: "capacité nouvelle compétence analyser données visuel illustration structurer projet prise de parole" },
+
+    // Page 2 : L'art de bien prompter
+    { title: "Soyez un bon manager", page: "reflex-page2.html", section: "Fiche Réflexe — L'art de bien prompter", keywords: "manager collaborateur stagiaire consigne mission prompt formuler demande" },
+    { title: "Donner un rôle à l'IA", page: "reflex-page2.html", section: "Fiche Réflexe — L'art de bien prompter", keywords: "rôle expert spécialiste analyste rédacteur prompt persona" },
+    { title: "Donner du contexte et une finalité", page: "reflex-page2.html", section: "Fiche Réflexe — L'art de bien prompter", keywords: "contexte finalité pourquoi destinataire contraintes situation prompt" },
+    { title: "Préciser le format attendu", page: "reflex-page2.html", section: "Fiche Réflexe — L'art de bien prompter", keywords: "format attendu tableau liste structure longueur plan comparatif prompt" },
+    { title: "Itérer et affiner", page: "reflex-page2.html", section: "Fiche Réflexe — L'art de bien prompter", keywords: "itérer affiner rebondir reformuler améliorer variante ajuster conversation prompt" },
+    { title: "Garder l'esprit critique", page: "reflex-page2.html", section: "Fiche Réflexe — L'art de bien prompter", keywords: "esprit critique vérifier hallucination relire croiser sources fiabilité prudence" }
   ];
 
   // --- Normalisation pour la recherche ---

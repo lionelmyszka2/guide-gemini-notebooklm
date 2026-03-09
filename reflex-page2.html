@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiche Réflexe - L'art de bien prompter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .reflex-page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .reflex-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .reflex-header h1 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+
+    .reflex-header .subtitle {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .reflex-intro {
+      background: var(--primary-light);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .reflex-intro p {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--text);
+      margin: 0;
+    }
+
+    .principle-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      margin-bottom: 1.25rem;
+      transition: border-color 0.2s;
+    }
+
+    .principle-card:hover {
+      border-color: var(--primary);
+    }
+
+    .principle-header {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      margin-bottom: 1rem;
+    }
+
+    .principle-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .principle-icon.role { background: #DBEAFE; }
+    .principle-icon.context { background: #FEF3C7; }
+    .principle-icon.format { background: #D1FAE5; }
+    .principle-icon.iterate { background: #EDE9FE; }
+    .principle-icon.tone { background: #FEE2E2; }
+
+    .principle-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .principle-body p {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+
+    .principle-body ul {
+      padding-left: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .principle-body li {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--text);
+      margin-bottom: 0.375rem;
+    }
+
+    .prompt-example {
+      background: #F1F5F9;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .prompt-example-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .prompt-example-label.bad {
+      color: #DC2626;
+    }
+
+    .prompt-example-label.good {
+      color: #16A34A;
+    }
+
+    .prompt-example-text {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--text);
+      font-style: italic;
+    }
+
+    .manager-box {
+      background: #EEF2FF;
+      border: 2px solid var(--primary);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      margin: 2rem 0;
+    }
+
+    .manager-box h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .manager-box p {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+
+    .manager-box ul {
+      padding-left: 1.25rem;
+    }
+
+    .manager-box li {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--text);
+      margin-bottom: 0.375rem;
+    }
+
+    .reflex-bottom-box {
+      background: var(--accent-light);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1.25rem 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .reflex-bottom-box p {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--text);
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">Guide Gemini & NotebookLM</a>
+    <div class="nav-links">
+      <a href="notebooklm.html">NotebookLM</a>
+      <a href="gemini.html">Gemini</a>
+      <a href="reflex.html" class="active">Fiche Réflexe</a>
+    </div>
+  </nav>
+
+  <main class="reflex-page">
+    <div class="reflex-header">
+      <h1>L'art de bien prompter</h1>
+      <p class="subtitle">Comment formuler vos demandes pour obtenir les meilleures réponses de l'IA</p>
+    </div>
+
+    <div class="reflex-intro">
+      <p>La qualité des réponses de l'IA dépend directement de la qualité de vos demandes. Un prompt vague produira une réponse générique. Un prompt précis et bien structuré produira une réponse pertinente et exploitable. Ce n'est pas une question de technique : c'est une question de <strong>clarté dans votre communication</strong>.</p>
+    </div>
+
+    <!-- L'analogie du manager -->
+    <div class="manager-box">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+        La règle d'or : soyez un bon manager
+      </h2>
+      <p>Pour bien prompter, il faut penser comme un <strong>bon manager qui confie une mission à un collaborateur</strong>. Imaginez que vous vous adressez à un stagiaire compétent mais qui ne connaît rien de votre contexte. Vous ne lui diriez pas simplement « fais-moi un truc sur le budget ». Vous lui expliqueriez :</p>
+      <ul>
+        <li><strong>Qui vous êtes</strong> et dans quel cadre vous travaillez</li>
+        <li><strong>Ce que vous attendez</strong> comme résultat concret</li>
+        <li><strong>Pourquoi</strong> vous lui demandez cette tâche (la finalité)</li>
+        <li><strong>Comment</strong> vous voulez que ce soit présenté (le format)</li>
+        <li><strong>Les éléments de contexte</strong> indispensables pour bien faire le travail</li>
+      </ul>
+      <p>C'est exactement la même chose avec l'IA. Elle n'est pas un être humain, mais elle répond bien mieux quand on lui parle avec le même niveau d'attention, de détails et de sens qu'on accorderait à un collaborateur. Plus votre consigne est claire, plus la réponse sera pertinente.</p>
+    </div>
+
+    <!-- Principe 1 : Donner un rôle -->
+    <div class="principle-card">
+      <div class="principle-header">
+        <span class="principle-icon role">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </span>
+        <h2 class="principle-title">Donnez-lui un rôle</h2>
+      </div>
+      <div class="principle-body">
+        <p>Commencez par dire à l'IA <strong>qui elle est</strong> dans cette conversation. En lui attribuant un rôle, vous orientez ses connaissances et son style de réponse vers le domaine qui vous intéresse.</p>
+        <ul>
+          <li>« Tu es un <strong>expert en communication publique</strong> spécialisé dans les collectivités territoriales »</li>
+          <li>« Tu es un <strong>rédacteur administratif</strong> qui maîtrise le langage juridique des délibérations »</li>
+          <li>« Tu es un <strong>analyste financier</strong> habitué à lire des comptes de gestion de services publics »</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Principe 2 : Donner du contexte -->
+    <div class="principle-card">
+      <div class="principle-header">
+        <span class="principle-icon context">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        </span>
+        <h2 class="principle-title">Donnez du contexte et une finalité</h2>
+      </div>
+      <div class="principle-body">
+        <p>L'IA ne connaît rien de votre situation. Plus vous lui donnez d'éléments, mieux elle comprend votre besoin. Et surtout, dites-lui <strong>pourquoi</strong> vous lui demandez ce travail : la finalité change radicalement la réponse.</p>
+        <ul>
+          <li><strong>Votre contexte</strong> : « Je travaille dans une communauté de communes de 15 000 habitants, au service urbanisme »</li>
+          <li><strong>Le destinataire</strong> : « Ce courrier est destiné aux habitants d'un quartier en zone inondable »</li>
+          <li><strong>La finalité</strong> : « Je dois convaincre les élus d'investir dans la rénovation de la piscine municipale »</li>
+          <li><strong>Les contraintes</strong> : « Le texte doit tenir sur une page et rester accessible à un public non-expert »</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Principe 3 : Préciser le format -->
+    <div class="principle-card">
+      <div class="principle-header">
+        <span class="principle-icon format">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </span>
+        <h2 class="principle-title">Précisez le format attendu</h2>
+      </div>
+      <div class="principle-body">
+        <p>Ne laissez pas l'IA deviner comment vous voulez recevoir le résultat. Indiquez-lui clairement la forme, la longueur et la structure souhaitées.</p>
+        <ul>
+          <li>« Présente ta réponse sous forme de <strong>tableau comparatif</strong> avec trois colonnes »</li>
+          <li>« Rédige un texte de <strong>300 mots maximum</strong>, structuré avec des sous-titres »</li>
+          <li>« Donne-moi <strong>5 arguments</strong> sous forme de liste à puces, chacun en une phrase »</li>
+          <li>« Propose un <strong>plan détaillé</strong> avec des parties et sous-parties numérotées »</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Principe 4 : Itérer -->
+    <div class="principle-card">
+      <div class="principle-header">
+        <span class="principle-icon iterate">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+        </span>
+        <h2 class="principle-title">Itérez et affinez</h2>
+      </div>
+      <div class="principle-body">
+        <p>Un bon prompt ne produit pas toujours une réponse parfaite du premier coup. C'est normal. L'IA est conversationnelle : <strong>rebondissez</strong> sur sa réponse pour l'affiner progressivement.</p>
+        <ul>
+          <li>« C'est bien, mais <strong>raccourcis la partie 2</strong> et développe davantage la partie 3 »</li>
+          <li>« Le ton est trop formel. <strong>Reformule de manière plus accessible</strong> »</li>
+          <li>« Ajoute des <strong>exemples concrets</strong> issus du secteur public »</li>
+          <li>« <strong>Fais-moi une variante</strong> plus synthétique pour un diaporama »</li>
+        </ul>
+        <p>Chaque échange enrichit la compréhension de l'IA. N'hésitez pas à guider la conversation jusqu'à obtenir exactement ce dont vous avez besoin.</p>
+      </div>
+    </div>
+
+    <!-- Principe 5 : Utiliser l'IA pour ce qu'elle sait faire -->
+    <div class="principle-card">
+      <div class="principle-header">
+        <span class="principle-icon tone">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </span>
+        <h2 class="principle-title">Gardez l'esprit critique</h2>
+      </div>
+      <div class="principle-body">
+        <p>L'IA est un outil puissant, mais elle n'est pas infaillible. Un bon manager vérifie le travail qu'on lui rend. Avec l'IA, c'est pareil.</p>
+        <ul>
+          <li><strong>Vérifiez les faits</strong> : l'IA peut produire des informations plausibles mais inexactes (on appelle cela des « hallucinations »)</li>
+          <li><strong>Relisez toujours</strong> avant d'envoyer ou de publier un texte généré par l'IA</li>
+          <li><strong>Croisez les sources</strong> : pour les informations importantes, ne vous fiez pas à une seule réponse</li>
+          <li><strong>Adaptez le résultat</strong> : le travail de l'IA est une base, pas un produit fini. Ajoutez votre expertise et votre sensibilité</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Exemple comparatif -->
+    <div class="prompt-example">
+      <div class="prompt-example-label bad">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        Prompt vague
+      </div>
+      <p class="prompt-example-text">« Fais-moi un courrier pour les habitants. »</p>
+    </div>
+
+    <div class="prompt-example">
+      <div class="prompt-example-label good">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Prompt efficace
+      </div>
+      <p class="prompt-example-text">« Tu es un rédacteur de communication publique dans une commune de 8 000 habitants. Rédige un courrier d'information destiné aux habitants du quartier des Lilas pour les prévenir de travaux de voirie qui dureront 3 semaines à partir du 15 avril. Le ton doit être rassurant et pratique. Précise les itinéraires de déviation et les horaires de chantier. Le courrier doit tenir sur une page A4. »</p>
+    </div>
+
+    <div class="reflex-bottom-box">
+      <p><strong>En résumé :</strong> un bon prompt, c'est un rôle + un contexte + une finalité + un format. Parlez à l'IA comme vous parleriez à un collaborateur que vous voulez voir réussir : avec clarté, précision et bienveillance. Plus vous serez précis dans votre demande, moins vous aurez besoin de retoucher le résultat.</p>
+    </div>
+
+    <div class="nav-dual">
+      <a href="reflex.html" class="nav-banner nav-banner-prev">
+        <div class="nav-banner-arrow">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5"></path>
+            <path d="M12 19l-7-7 7-7"></path>
+          </svg>
+        </div>
+        <div class="nav-banner-content">
+          <span class="nav-banner-label">Page précédente</span>
+          <span class="nav-banner-title">Quand solliciter l'IA ?</span>
+        </div>
+      </a>
+      <a href="index.html" class="nav-banner nav-banner-next">
+        <div class="nav-banner-content" style="text-align: right;">
+          <span class="nav-banner-label">Retour à l'accueil</span>
+          <span class="nav-banner-title">Guide interactif</span>
+        </div>
+        <div class="nav-banner-arrow">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+          </svg>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    Guide Gemini & NotebookLM &mdash; Guide de formation aux outils IA
+  </footer>
+
+</body>
+</html>

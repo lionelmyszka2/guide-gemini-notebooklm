@@ -131,8 +131,9 @@ body {
 
 .tools-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .tool-card {
@@ -181,6 +182,10 @@ body {
 
 .tool-icon.gemini {
   background: #DBEAFE;
+}
+
+.tool-icon.reflex {
+  background: #FEE2E2;
 }
 
 .tool-card h2 {
@@ -814,7 +819,7 @@ body {
 
 /* --- Search Section (Landing Page) --- */
 .search-section {
-  margin-top: 3rem;
+  margin-top: 0;
   padding: 2rem;
   background: var(--bg-card);
   border: 1px solid var(--border);

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiche Réflexe - Quand utiliser l'IA ?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .reflex-page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .reflex-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .reflex-header h1 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+
+    .reflex-header .subtitle {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .reflex-intro {
+      background: var(--primary-light);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .reflex-intro p {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--text);
+      margin: 0;
+    }
+
+    .benefit-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      margin-bottom: 1.25rem;
+      transition: border-color 0.2s;
+    }
+
+    .benefit-card:hover {
+      border-color: var(--primary);
+    }
+
+    .benefit-header {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      margin-bottom: 1rem;
+    }
+
+    .benefit-number {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.125rem;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .benefit-number.n1 { background: #6366F1; }
+    .benefit-number.n2 { background: #F97316; }
+    .benefit-number.n3 { background: #10B981; }
+    .benefit-number.n4 { background: #8B5CF6; }
+
+    .benefit-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .benefit-body p {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+
+    .benefit-body ul {
+      padding-left: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .benefit-body li {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--text);
+      margin-bottom: 0.375rem;
+    }
+
+    .benefit-body li strong {
+      color: var(--text);
+    }
+
+    .reflex-bottom-box {
+      background: var(--accent-light);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1.25rem 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .reflex-bottom-box p {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--text);
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">Guide Gemini & NotebookLM</a>
+    <div class="nav-links">
+      <a href="notebooklm.html">NotebookLM</a>
+      <a href="gemini.html">Gemini</a>
+      <a href="reflex.html" class="active">Fiche Réflexe</a>
+    </div>
+  </nav>
+
+  <main class="reflex-page">
+    <div class="reflex-header">
+      <h1>Quand solliciter l'IA ?</h1>
+      <p class="subtitle">Quatre situations dans lesquelles l'intelligence artificielle peut vous aider au quotidien</p>
+    </div>
+
+    <div class="reflex-intro">
+      <p>Vous avez découvert en formation ce que l'IA générative sait faire. Mais au quotidien, le plus difficile n'est pas de savoir <em>comment</em> l'utiliser : c'est d'avoir le <strong>réflexe de la solliciter</strong>. On oublie souvent qu'elle pourrait nous aider, tout simplement parce qu'on n'y pense pas. Cette fiche est là pour vous rappeler les quatre grandes raisons de faire appel à l'IA. Avant de vous lancer dans une tâche, posez-vous la question : <strong>est-ce que l'IA pourrait m'aider ici ?</strong></p>
+    </div>
+
+    <!-- Bénéfice 1 -->
+    <div class="benefit-card">
+      <div class="benefit-header">
+        <span class="benefit-number n1">1</span>
+        <h2 class="benefit-title">Temps économisé</h2>
+      </div>
+      <div class="benefit-body">
+        <p>L'IA excelle dans les tâches qui vous prennent du temps alors qu'elles ne nécessitent pas forcément votre expertise personnelle. Elle peut produire en quelques secondes un travail qui vous aurait demandé des dizaines de minutes, voire des heures.</p>
+        <ul>
+          <li><strong>Synthétiser un document</strong> de 50 pages en quelques points clés</li>
+          <li><strong>Rédiger un premier jet</strong> de courrier, de note ou de compte rendu</li>
+          <li><strong>Rechercher des informations</strong> sur un sujet que vous ne maîtrisez pas</li>
+          <li><strong>Comparer des données</strong> issues de tableaux ou de rapports</li>
+          <li><strong>Traduire ou reformuler</strong> un texte dans un autre registre</li>
+        </ul>
+        <p>Le réflexe : quand une tâche vous semble longue et répétitive, demandez-vous si l'IA pourrait vous fournir une base de travail en quelques secondes.</p>
+      </div>
+    </div>
+
+    <!-- Bénéfice 2 -->
+    <div class="benefit-card">
+      <div class="benefit-header">
+        <span class="benefit-number n2">2</span>
+        <h2 class="benefit-title">Pénibilité réduite</h2>
+      </div>
+      <div class="benefit-body">
+        <p>Certaines tâches ne sont pas complexes, mais elles sont fastidieuses. Ce sont ces petits travaux qu'on repousse parce qu'ils sont ennuyeux, ingrats ou mécaniques. L'IA peut les absorber à votre place.</p>
+        <ul>
+          <li><strong>Mettre en forme un tableau</strong> ou réorganiser des données</li>
+          <li><strong>Rédiger des réponses standardisées</strong> à des courriers ou des sollicitations récurrentes</li>
+          <li><strong>Corriger et relire</strong> un texte long (orthographe, syntaxe, clarté)</li>
+          <li><strong>Créer des modèles</strong> de documents que vous devez produire régulièrement</li>
+          <li><strong>Transformer un format en un autre</strong> (notes brutes en compte rendu structuré, par exemple)</li>
+        </ul>
+        <p>Le réflexe : quand une tâche vous décourage d'avance, c'est probablement un bon candidat pour l'IA.</p>
+      </div>
+    </div>
+
+    <!-- Bénéfice 3 -->
+    <div class="benefit-card">
+      <div class="benefit-header">
+        <span class="benefit-number n3">3</span>
+        <h2 class="benefit-title">Qualité améliorée</h2>
+      </div>
+      <div class="benefit-body">
+        <p>L'IA peut enrichir et améliorer le résultat de votre travail. Elle apporte un regard complémentaire, détecte des oublis et propose des formulations ou des structures auxquelles vous n'auriez pas pensé.</p>
+        <ul>
+          <li><strong>Améliorer la rédaction</strong> d'un texte (clarté, ton, structure)</li>
+          <li><strong>Vérifier la cohérence</strong> d'un document ou d'une argumentation</li>
+          <li><strong>Enrichir un projet</strong> avec des idées, des angles ou des exemples supplémentaires</li>
+          <li><strong>Adapter un contenu</strong> à un public différent (vulgariser un texte technique, formaliser une note informelle)</li>
+          <li><strong>Challenger votre réflexion</strong> en demandant à l'IA de jouer l'avocat du diable</li>
+        </ul>
+        <p>Le réflexe : avant de finaliser un travail important, passez-le à l'IA pour obtenir un regard neuf et des suggestions d'amélioration.</p>
+      </div>
+    </div>
+
+    <!-- Bénéfice 4 -->
+    <div class="benefit-card">
+      <div class="benefit-header">
+        <span class="benefit-number n4">4</span>
+        <h2 class="benefit-title">Capacité nouvelle</h2>
+      </div>
+      <div class="benefit-body">
+        <p>L'IA vous permet de réaliser des tâches que vous n'auriez tout simplement pas pu faire seul, faute de compétences techniques, de temps ou de ressources. Elle devient un levier pour aller au-delà de vos savoir-faire habituels.</p>
+        <ul>
+          <li><strong>Analyser un jeu de données</strong> sans être expert en tableurs ou en statistiques</li>
+          <li><strong>Produire un visuel ou une illustration</strong> sans compétences graphiques</li>
+          <li><strong>Explorer un sujet inconnu</strong> en profondeur grâce à la recherche approfondie</li>
+          <li><strong>Structurer un projet complexe</strong> en demandant à l'IA de vous proposer un plan d'action</li>
+          <li><strong>Préparer une prise de parole</strong> en générant une trame, des arguments et des supports</li>
+        </ul>
+        <p>Le réflexe : quand vous pensez « je ne sais pas faire ça » ou « il me faudrait quelqu'un pour m'aider », essayez d'abord avec l'IA.</p>
+      </div>
+    </div>
+
+    <div class="reflex-bottom-box">
+      <p><strong>En résumé :</strong> avant chaque tâche, posez-vous cette question simple : <em>est-ce que c'est long, pénible, perfectible, ou hors de mes compétences ?</em> Si la réponse est oui à l'un de ces critères, l'IA peut probablement vous aider. Le plus dur n'est pas de l'utiliser, c'est d'y penser.</p>
+    </div>
+
+    <a href="reflex-page2.html" class="next-page-banner">
+      <div class="next-page-content">
+        <span class="next-page-label">Page suivante</span>
+        <span class="next-page-title">L'art de bien prompter</span>
+        <span class="next-page-desc">Apprenez à formuler vos demandes pour obtenir les meilleures réponses de l'IA</span>
+      </div>
+      <div class="next-page-arrow">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"></path>
+          <path d="M12 5l7 7-7 7"></path>
+        </svg>
+      </div>
+    </a>
+  </main>
+
+  <footer class="site-footer">
+    Guide Gemini & NotebookLM &mdash; Guide de formation aux outils IA
+  </footer>
+
+</body>
+</html>
